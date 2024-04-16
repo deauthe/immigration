@@ -148,7 +148,7 @@ const Menu: React.FC<MenuProps> = ({ showMenu, setShowMenu }) => {
 								<NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
 								<NavigationMenuContent
 									key={index}
-									className="bg-red-400 flex flex-col w-96 "
+									className=" flex flex-col w-96 "
 								>
 									<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1000px] ">
 										{item.subMenu &&

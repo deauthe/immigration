@@ -5,11 +5,6 @@ import Wrapper from "@/components/mainComponents/Wrapper";
 import Link from "next/link";
 import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
-import { CgProfile } from "react-icons/cg";
-import { MdLabelImportant, MdLogout } from "react-icons/md";
-import { MdOutlineLogin } from "react-icons/md";
-import { IoMdHeartEmpty } from "react-icons/io";
-import { BsCart } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 
@@ -133,7 +128,10 @@ const Navbar = () => {
 			<div className="  flex items-center gap-2   ">
 				{/* {Button } */}
 
-				<Link className="text-black" href={"/"}>
+				<Link
+					className="text-white bg-gradient-to-r from-black to-red-600 p-4 rounded-full hover:scale-105 transition-all duration-100"
+					href={"/"}
+				>
 					<span
 						className={` font-bold  active:scale-105 duration-300 transition-all  `}
 					>
