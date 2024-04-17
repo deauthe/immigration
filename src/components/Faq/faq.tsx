@@ -9,7 +9,7 @@ import { FaqItems } from "./FaqStaticItems";
 
 const FaqSection = () => {
 	return (
-		<div className="h-fit bg-red-200/15 rounded-lg w-full flex flex-col py-5 shadow-lg bg-dot-red-100/[0.8]">
+		<div className="h-fit bg-red-200/15 rounded-lg w-full flex flex-col py-5 ">
 			<div className="mx-auto mb-2 ">
 				<h1 className="lg:text-9xl md:text-7xl text-4xl tracking-tighter bg-gradient-to-l from-red-600 to-black text-transparent box-content font-oswald font-bold mx-auto bg-clip-text  lg:px-2">
 					FAQs
@@ -21,7 +21,7 @@ const FaqSection = () => {
 						Got a question?
 					</h1>
 				</div>
-				<div className="col-span-2 lg:px-5 md:px-2 px-1 bg-white py-10 rounded-lg shadow-lg border-black/[0.1] border-2 mx-auto md:mx-10 lg:w-full">
+				<div className="col-span-2 lg:px-5 md:px-2 px-1 bg-white py-10 rounded-lg  shadow-md mx-auto md:mx-10 lg:w-full">
 					<Accordion type="single" collapsible>
 						{FaqItems.map((item, index) => {
 							return (

@@ -55,8 +55,60 @@ const AboutUs = () => {
 						</div>
 					</div>
 				</div>
+				{/* cards  */}
+				<div className="grid grid-cols-2 gap-1 mx-auto w-3/4 ">
+					<div className="w-fit ml-auto">
+						<Card
+							description="jkabsdlwadkwd"
+							icon={<GiLaurelsTrophy />}
+							image=""
+							title="MOVE ON"
+							url="/"
+							key={1}
+						/>
+					</div>
+					<div className="w-fit mr-auto">
+						<Card
+							description="jkabsdlwadkwd"
+							icon={<GiLaurelsTrophy />}
+							image=""
+							title="MOVE ON"
+							url="/"
+							key={2}
+						/>
+					</div>
+				</div>
 			</div>
 		</Wrapper>
+	);
+};
+
+type CardProps = {
+	icon: ReactNode;
+	title: string;
+	description: string;
+	image: string;
+	url: string;
+};
+
+const Card = (props: CardProps) => {
+	const { icon, title, description, image, url } = props;
+	return (
+		<div className="text-white size-72 rounded-md flex flex-col gap-5 p-5 shadow-md bg-black hover:border-red-600 border-transparent transition-all duration-300 border-[2px] ">
+			<h1 className="text-4xl text-center font-bold tracking-tighter w-fit mx-auto ">
+				{icon}
+			</h1>
+			<h1 className="text-4xl text-center font-bold tracking-tighter ">
+				{title}
+			</h1>
+			<h3 className="text-lg text-center font-light">{description}</h3>
+			<Link
+				href={url}
+				className="text-2xl text-center tracking-tight hover:scale-[102%] transition-all duration-100"
+			>
+				Read More
+			</Link>
+		</div>
 	);
 };
 

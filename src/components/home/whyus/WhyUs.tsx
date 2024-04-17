@@ -34,7 +34,7 @@ const WhyUs = () => {
 	return (
 		<Wrapper>
 			<div className="flex flex-col gap-10 ">
-				<div className="grid grid-cols-2 gap-5 justify-between mb-10 bg-gradient-to-tl from-white to-red-100 p-10 rounded-lg">
+				<div className="grid grid-cols-2 gap-5 justify-between mb-10 bg-gradient-to-tl from-white to-red-1	00 p-10 rounded-lg">
 					<div className="flex flex-col gap-5 w-3/4 mx-auto">
 						<h1 className="uppercase text-6xl font-bold tracking-tighter bg-gradient-to-r from-black to-red-500 text-transparent bg-clip-text">
 							Why Us

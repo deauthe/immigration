@@ -53,7 +53,7 @@ const Hero = (props: Props) => {
 						/>
 					</div>
 				</div>
-				<div className="mx-auto   flex justify-between gap-5">
+				<div className="mx-auto   flex justify-between gap-1">
 					{staticHeroCards.map((card, index) => {
 						return <Card key={index} {...card} />;
 					})}
@@ -84,7 +84,7 @@ type CardProps = {
 const Card = (props: CardProps) => {
 	const { icon, title, description, image, url } = props;
 	return (
-		<div className="size-72 rounded-md flex flex-col gap-5 p-5 shadow-md bg-gray-300/[0.8] hover:border-red-600 border-transparent transition-all duration-300 border-[1px] ">
+		<div className="size-72 rounded-md flex flex-col gap-5 p-5 shadow-md bg-black text-white hover:border-red-600 border-transparent transition-all duration-300 border-[1px] ">
 			<h1 className="text-4xl text-center font-bold tracking-tighter w-fit mx-auto ">
 				{icon}
 			</h1>

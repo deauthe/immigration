@@ -3,7 +3,6 @@ import FaqSection from "@/components/Faq/faq";
 import AboutUs from "@/components/home/aboutUs/AboutUs";
 import Hero from "@/components/home/hero/Hero";
 import WhyUs from "@/components/home/whyus/WhyUs";
-import Image from "next/image";
 
 export default function Home() {
 	return (
