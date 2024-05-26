@@ -18,15 +18,20 @@ type Props = {
 const SideBarLinks = (props: Props) => {
 	const { sections } = props;
 	return (
-		<div className="w-full flex flex-col gap-10">
+		<div className="w-[500px] flex flex-col gap-5 mt-10">
 			{sections.map((item, index) => {
 				return (
-					<div key={index} className="flex flex-col gap-5">
-						<h1>{item.title}</h1>
+					<div key={index} className="flex flex-col gap-1">
+						<h1 className="mx-auto w-fit uppercase font-bold">{item.title}</h1>
+						<hr className="text-black bg-black" />
 						<div className="flex flex-col gap-2">
 							{item.links?.map((link, index) => {
 								return (
-									<Link key={index} className="" href={link.url}>
+									<Link
+										key={index}
+										className="px-4 py-1 rounded-lg hover:bg-red-600 hover:text-white text-black font-normal tracking-tight mx-auto transition-all duration-100 "
+										href={link.url}
+									>
 										{link.title}
 									</Link>
 								);

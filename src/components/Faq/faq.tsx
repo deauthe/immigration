@@ -29,7 +29,7 @@ const FaqSection = () => {
 									<AccordionTrigger className="lg:text-2xl md:text-xl text-lg lg:px-0 md:px-2 px-3 lg:font-semibold md:font-medium text-black/[0.8]  font-normal hover:no-underline text-left">
 										{item.heading}
 									</AccordionTrigger>
-									<AccordionContent className="text-xl">
+									<AccordionContent className="lg:text-xl md:text-lg text-md lg:px-0 md:px-2 px-3 text-muted-foreground ">
 										{item.description}
 									</AccordionContent>
 								</AccordionItem>

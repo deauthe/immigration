@@ -44,9 +44,9 @@ const data: MenuItem[] = [
 		name: "Migrate",
 		url: "/",
 		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
+			{ id: 1, name: "Express Entry", url: "/" },
+			{ id: 2, name: "Family", url: "/" },
+			{ id: 3, name: "Humanitarian and compassionatets", url: "/" },
 			{ id: 4, name: "why us", url: "/" },
 			{ id: 5, name: "Career", url: "/" },
 		],

@@ -8,21 +8,7 @@ import MenuMobile from "./MenuMobile";
 import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 
-import logo from "@/public/logo.png";
-
-import Router, { useRouter } from "next/navigation";
-import Image from "next/image";
-
-interface Category {
-	id: number;
-	attributes: {
-		slug: string;
-		name: string;
-		products: {
-			data: any[]; // Update with the correct type
-		};
-	};
-}
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -32,45 +18,8 @@ const Navbar = () => {
 	const [show, setShow] = useState<string>("translate-y-0");
 	const [lastScrollY, setLastScrollY] = useState<number>(0);
 	const [textColor, setTextColor] = useState<string>("text-black");
-	const [categories, setCategories] = useState<Category[] | null>(null);
 
 	const router = useRouter();
-
-	useEffect(() => {
-		setCategories([
-			{
-				id: 1,
-				attributes: {
-					name: "T-Shirts",
-					slug: "/",
-					products: {
-						data: [],
-					},
-				},
-			},
-			{
-				id: 2,
-				attributes: {
-					name: "Hoodies",
-					slug: "/",
-					products: {
-						data: [],
-					},
-				},
-			},
-		]);
-	}, []);
-
-	//TODO:
-	// const { cartItems } = useSelector((state) => state.cart);
-
-	const toggleDropdown = useCallback(() => {
-		setIsOpen(!isOpen);
-	}, [isOpen]);
-
-	const handleMouseEvents = useCallback(() => {
-		setIsHovered(!isHovered);
-	}, [isHovered]);
 
 	const controlNavbar = () => {
 		if (window.scrollY >= 150) {
@@ -120,7 +69,6 @@ const Navbar = () => {
 						showCatMenu={showCatMenu}
 						setShowCatMenu={setShowCatMenu}
 						setMobileMenu={setMobileMenu}
-						categories={(categories as Category[]) || undefined}
 					/>
 				</div>
 			)}

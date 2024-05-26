@@ -8,7 +8,7 @@ const AboutUs = () => {
 	return (
 		<Wrapper>
 			<div className="flex flex-col gap-10 ">
-				<div className="grid grid-cols-2 gap-5 justify-between">
+				<div className="md:grid md:grid-cols-2 flex flex-col gap-5 justify-between text-center md:text-left">
 					<div className="mx-auto flex">
 						<Image
 							src="/ceo.webp"
@@ -36,19 +36,19 @@ const AboutUs = () => {
 							and transparency towards his work is what his clients and audience
 							seek.
 						</h3>
-						<h3 className="font-extralight text-lg tracking-normal">
+						<h3 className="font-extralight text-lg tracking-normal text-muted-foreground">
 							certificate of recognition:
 						</h3>
-						<div className="flex flex-row gap-5">
+						<div className="flex flex-row gap-5 w-fit mx-auto md:mr-auto ">
 							<Link
 								href="/"
-								className="text-6xl hover:scale-105 transition-all duration-100"
+								className="mx-auto text-6xl hover:scale-105 transition-all duration-100"
 							>
 								<GiLaurelsTrophy />
 							</Link>
 							<Link
 								href=""
-								className="text-6xl hover:scale-105 transition-all duration-100"
+								className="mx-auto text-6xl hover:scale-105 transition-all duration-100"
 							>
 								<GiLaurelsTrophy />
 							</Link>
@@ -56,8 +56,8 @@ const AboutUs = () => {
 					</div>
 				</div>
 				{/* cards  */}
-				<div className="grid grid-cols-2 gap-1 mx-auto w-3/4 ">
-					<div className="w-fit ml-auto">
+				<div className="md:grid md:grid-cols-2 flex flex-col gap-1 mx-auto w-3/4 ">
+					<div className="w-fit md:ml-auto m-auto">
 						<Card
 							description="jkabsdlwadkwd"
 							icon={<GiLaurelsTrophy />}
@@ -67,7 +67,7 @@ const AboutUs = () => {
 							key={1}
 						/>
 					</div>
-					<div className="w-fit mr-auto">
+					<div className="w-fit md:mr-auto mx-auto">
 						<Card
 							description="jkabsdlwadkwd"
 							icon={<GiLaurelsTrophy />}

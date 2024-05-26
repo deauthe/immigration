@@ -6,15 +6,15 @@ type Props = {};
 const ContactUs = (props: Props) => {
 	return (
 		<div className="mx-auto bg-gradient-to-tr from-black to-red-600 h-fit w-full p-10">
-			<div className="grid grid-cols-4">
+			<div className="md:grid md:grid-cols-4 flex flex-col gap-5 text-center md:text-left">
 				<div className="col-span-3 flex flex-col gap-5">
 					<h1 className="text-3xl font-extralight text-white/[0.6]">
 						Looking For A
 					</h1>
-					<h1 className="text-6xl font-extrabold text-white/[0.9] ">
+					<h1 className="lg:text-6xl md:text-5xl text-4xl font-extrabold text-white/[0.9] ">
 						Licensed Canadian Immigration Consultant?
 					</h1>
-					<h3 className="text-2xl text-white/[0.7] font-extralight">
+					<h3 className="md:text-2xl text-lg text-white/[0.7] font-extralight">
 						Mail Us At immigration@immigration.com
 					</h3>
 				</div>
