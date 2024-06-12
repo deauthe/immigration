@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import Providers from "./providers";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +19,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
-			<body className={`${inter.className} pt-20`}>
-				<Navbar />
-				{children}
-				<Footer />
-			</body>
-		</html>
+		<Providers>
+			<html data-theme="mytheme" lang="en">
+				<body className={`${inter.className} `}>
+					<Navbar />
+					{children}
+					<Footer />
+					<Toaster />
+				</body>
+			</html>
+		</Providers>
 	);
 }

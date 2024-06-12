@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import { BsChevronDown } from "react-icons/bs";
@@ -26,13 +27,13 @@ interface MenuProps {
 	setShowMenu: (show: boolean) => void;
 }
 
-const data: MenuItem[] = [
+export const navMenuData: MenuItem[] = [
 	{
 		id: 1,
 		name: "About US",
-		url: "/",
+		url: "/#AboutUs",
 		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
+			{ id: 1, name: "about us", url: "/#AboutUs" },
 			{ id: 2, name: "Teams", url: "/" },
 			{ id: 3, name: "Faqs", url: "/" },
 			{ id: 4, name: "why us", url: "/" },
@@ -137,33 +138,31 @@ const data: MenuItem[] = [
 	},
 ];
 
-const Menu: React.FC<MenuProps> = ({ showMenu, setShowMenu }) => {
+const Menu = () => {
 	return (
 		<NavigationMenu>
-			<NavigationMenuList>
-				{data.map((item, index) => {
+			<NavigationMenuList className="flex flex-row gap-5">
+				{navMenuData.map((item, index) => {
 					return (
-						<div key={index}>
-							<NavigationMenuItem>
-								<NavigationMenuTrigger>{item.name}</NavigationMenuTrigger>
-								<NavigationMenuContent
-									key={index}
-									className=" flex flex-col w-96 "
-								>
-									<ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[1000px] ">
-										{item.subMenu &&
-											item.subMenu.map((item, index) => {
-												return (
-													<ListItem
-														key={item.name}
-														title={item.name}
-														href={item.url || "/"}
-													></ListItem>
-												);
-											})}
-									</ul>
-								</NavigationMenuContent>
-							</NavigationMenuItem>
+						<div key={index} className="du-dropdown du-dropdown-hover ">
+							<div className="uppercase font-extralight bg-transparent mx-1 text-primary-content hover:cursor-pointer">
+								{item.name}
+							</div>
+							<ul
+								tabIndex={0}
+								className="du-dropdown-content z-[1] du-menu du-card-bordered p-2 shadow bg-primary/90 text-primary-content uppercase rounded-box w-52 "
+							>
+								{item.subMenu &&
+									item.subMenu.map((item, index) => {
+										return (
+											<ListItem
+												key={item.name}
+												title={item.name}
+												href={item.url || "/"}
+											></ListItem>
+										);
+									})}
+							</ul>
 						</div>
 					);
 				})}
@@ -182,7 +181,7 @@ const ListItem = React.forwardRef<
 				<a
 					ref={ref}
 					className={cn(
-						"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+						"block select-none du-bordered space-y-1 rounded-md items-center leading-none no-underline outline-none transition-colors hover:glass hover:text-accent-foreground focus:bg-primary focus:text-accent-foreground",
 						className
 					)}
 					{...props}

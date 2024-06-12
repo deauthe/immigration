@@ -1,0 +1,56 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id              String           @id @default(uuid())
+  username        String           @db.VarChar(255) @unique
+  createdAt       DateTime         @default(now()) @db.Timestamp(6)
+  userAssesment   UserAssesment?
+}
+
+model UserAssesment {
+  id             String     @id @default(uuid())
+  createdAt      DateTime   @default(now()) @db.Timestamp(6)
+  updatedAt      DateTime   @updatedAt
+  firstName      String        
+  lastName       String
+  mobileNo       String?
+  email          String?  @unique
+  country        String?
+  childrenNo     Int?
+  age            Int?
+  educationLevel EducationLevel?
+  educationField EducationField?
+  englishLevel   EnglishLevel?
+  frenchLevel    String?
+  ieltsScorce    String?
+  familyInCanada Boolean
+  travelHistory  String?
+  netWorth       String?
+  comment        String?
+  user           User  @relation(fields: [userId],references: [id])
+  userId         String  @unique
+}
+
+enum EducationLevel{
+    short 
+    medium
+    long
+}
+
+enum EducationField{
+    short 
+    medium
+    long
+}
+enum EnglishLevel{
+    short 
+    medium
+    long
+}

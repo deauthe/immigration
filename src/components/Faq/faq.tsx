@@ -9,9 +9,12 @@ import { FaqItems } from "./FaqStaticItems";
 
 const FaqSection = () => {
 	return (
-		<div className="h-fit bg-red-200/15 rounded-lg w-full flex flex-col py-5 ">
+		<div
+			className="du-hero h-fit bg-gradient-to-tl from-red-900/80 to-white w-full flex flex-col py-5 rounded-none "
+			style={{ backgroundImage: "url(/toronto.jpg)" }}
+		>
 			<div className="mx-auto mb-2 ">
-				<h1 className="lg:text-9xl md:text-7xl text-4xl tracking-tighter bg-gradient-to-l from-red-600 to-black text-transparent box-content font-oswald font-bold mx-auto bg-clip-text  lg:px-2">
+				<h1 className="lg:text-9xl md:text-7xl text-4xl tracking-tighter bg-gradient-to-l from-red-600 to-primary-content stroke-black  text-transparent box-content font-oswald font-bold mx-auto bg-clip-text  lg:px-2">
 					FAQs
 				</h1>
 			</div>
@@ -21,21 +24,25 @@ const FaqSection = () => {
 						Got a question?
 					</h1>
 				</div>
-				<div className="col-span-2 lg:px-5 md:px-2 px-1 bg-white py-10 rounded-lg  shadow-md mx-auto md:mx-10 lg:w-full">
-					<Accordion type="single" collapsible>
+				<div className="col-span-2 lg:px-5 md:px-2 px-1 du-glass  bg-black/80 py-10 rounded-lg  shadow-md mx-auto md:mx-10 lg:w-full">
+					<div className="du-join du-join-vertical prose text-primary-content">
 						{FaqItems.map((item, index) => {
 							return (
-								<AccordionItem value={`${item.id}`!} key={index}>
-									<AccordionTrigger className="lg:text-2xl md:text-xl text-lg lg:px-0 md:px-2 px-3 lg:font-semibold md:font-medium text-black/[0.8]  font-normal hover:no-underline text-left">
+								<div
+									key={index}
+									className="du-collapse du-collapse-arrow du-join-item du-border du-border-base-300"
+								>
+									<input type="radio" name="my-accordion-3" checked={true} />
+									<div className="du-collapse-title text-xl font-medium ">
 										{item.heading}
-									</AccordionTrigger>
-									<AccordionContent className="lg:text-xl md:text-lg text-md lg:px-0 md:px-2 px-3 text-muted-foreground ">
-										{item.description}
-									</AccordionContent>
-								</AccordionItem>
+									</div>
+									<div className="du-collapse-content">
+										<p>{item.description}</p>
+									</div>
+								</div>
 							);
 						})}
-					</Accordion>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,94 +1,82 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import { navMenuData } from "./Menu";
+
+import {
+	Sheet,
+	SheetClose,
+	SheetContent,
+	SheetDescription,
+	SheetFooter,
+	SheetHeader,
+	SheetTitle,
+	SheetTrigger,
+} from "@/components/ui/sheet";
+import { VscChromeClose } from "react-icons/vsc";
+import { BiMenuAltRight } from "react-icons/bi";
 import Link from "next/link";
-import { BsChevronDown } from "react-icons/bs";
+import LoginButton from "../LoginButton";
 
-interface MenuItem {
-	id: number;
-	name: string;
-	url?: string;
-	subMenu?: boolean;
-}
+type Props = {};
 
-interface Category {
-	id: number;
-	attributes: {
-		slug: string;
-		name: string;
-		products: {
-			data: any[]; // Update with the correct type
-		};
-	};
-}
+const MenuMobile = (props: Props) => {
+	const [isOpen, setIsOpen] = useState<boolean>(false);
 
-interface MenuMobileProps {
-	showCatMenu: boolean;
-	setShowCatMenu: (show: boolean) => void;
-	setMobileMenu: (show: boolean) => void;
-	categories?: Category[];
-}
-
-const data: MenuItem[] = [
-	{ id: 1, name: "Deals", url: "/" },
-	{ id: 2, name: "What's New", url: "/about" },
-	{ id: 3, name: "Categories", subMenu: true },
-];
-
-const MenuMobile: React.FC<MenuMobileProps> = ({
-	showCatMenu,
-	setShowCatMenu,
-	setMobileMenu,
-	categories,
-}) => {
 	return (
-		<ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-full h-[calc(100vh-50px)] bg-white border-t text-black">
-			{data.map((item) => {
-				return (
-					<React.Fragment key={item.id}>
-						{!!item?.subMenu ? (
-							<li
-								className="cursor-pointer py-4 px-5 border-b flex flex-col relative"
-								onClick={() => setShowCatMenu(!showCatMenu)}
-							>
-								<div className="flex justify-between items-center">
-									{item.name}
-									<BsChevronDown size={14} />
-								</div>
-
-								{showCatMenu && (
-									<ul className="bg-black/[0.05] -mx-5 mt-4 -mb-4">
-										{categories?.map(({ attributes: c, id }) => {
+		<Sheet onOpenChange={(e) => setIsOpen(e)}>
+			<SheetTrigger asChild>
+				{isOpen ? (
+					<VscChromeClose
+						className="text-[16px] text-primary-content"
+						onClick={() => setIsOpen(!isOpen)}
+					/>
+				) : (
+					<BiMenuAltRight
+						className="text-[20px] text-primary-content"
+						onClick={() => setIsOpen(!isOpen)}
+					/>
+				)}
+			</SheetTrigger>
+			<SheetContent className="bg-primary text-primary-content border-none rounded-l-lg ">
+				<SheetHeader>
+					<SheetTitle className="text-white font-extrabold text-3xl">
+						BMOR
+					</SheetTitle>
+				</SheetHeader>
+				{/* daisy ui magic for nested list  */}
+				<ul className="du-menu bg-transparent w-full du-rounded-box active:du-glass prose-md uppercase text-md gap-5">
+					{navMenuData.map((item, index) => {
+						return (
+							<li key={index}>
+								<details>
+									<summary>{item.name}</summary>
+									<ul>
+										{item?.subMenu?.map((sublink, index) => {
 											return (
-												<Link
-													key={id}
-													href={`/category/${c.slug}`}
-													onClick={() => {
-														setShowCatMenu(false);
-														setMobileMenu(false);
-													}}
-												>
-													<li className="py-4 px-8 border-t flex justify-between">
-														{c.name}
-														<span className="opacity-50 text-sm">
-															{`(${c.products.data.length})`}
-														</span>
-													</li>
-												</Link>
+												<li key={index}>
+													<Link href={sublink.url as string}>
+														{sublink.name}
+													</Link>
+												</li>
 											);
 										})}
 									</ul>
-								)}
+								</details>
 							</li>
-						) : (
-							<li className="py-4 px-5 border-b">
-								<Link href={item?.url!} onClick={() => setMobileMenu(false)}>
-									{item.name}
-								</Link>
-							</li>
-						)}
-					</React.Fragment>
-				);
-			})}
-		</ul>
+						);
+					})}
+					<LoginButton />
+				</ul>
+				{/* end of nested lists  */}
+				<SheetFooter>
+					<aside>
+						<p className="text-muted-foreground">
+							Copyright © 2024 - All right reserved by BMOR
+						</p>
+					</aside>
+				</SheetFooter>
+			</SheetContent>
+		</Sheet>
 	);
 };
 
