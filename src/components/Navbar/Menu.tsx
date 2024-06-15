@@ -40,18 +40,7 @@ export const navMenuData: MenuItem[] = [
 			{ id: 5, name: "Career", url: "/" },
 		],
 	},
-	{
-		id: 1,
-		name: "Migrate",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "Express Entry", url: "/" },
-			{ id: 2, name: "Family", url: "/" },
-			{ id: 3, name: "Humanitarian and compassionatets", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
-	},
+
 	{
 		id: 1,
 		name: "Work",
@@ -88,69 +77,21 @@ export const navMenuData: MenuItem[] = [
 			{ id: 5, name: "Career", url: "/" },
 		],
 	},
-	{
-		id: 1,
-		name: "Business",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
-	},
-	{
-		id: 1,
-		name: "Services",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
-	},
-	{
-		id: 1,
-		name: "News room",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
-	},
-	{
-		id: 1,
-		name: "Community",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
-	},
 ];
 
 const Menu = () => {
 	return (
 		<NavigationMenu>
-			<NavigationMenuList className="flex flex-row gap-5">
+			<NavigationMenuList className="flex flex-row gap-3 ">
 				{navMenuData.map((item, index) => {
 					return (
 						<div key={index} className="du-dropdown du-dropdown-hover ">
-							<div className="uppercase font-extralight bg-transparent mx-1 text-primary-content hover:cursor-pointer">
+							<div className="uppercase font-light bg-transparent mx-1  hover:cursor-pointer">
 								{item.name}
 							</div>
 							<ul
 								tabIndex={0}
-								className="du-dropdown-content z-[1] du-menu du-card-bordered p-2 shadow bg-primary/90 text-primary-content uppercase rounded-box w-52 "
+								className="du-dropdown-content z-[1] du-menu du-card-bordered p-2 shadow bg-primary/90  uppercase rounded-box w-52 "
 							>
 								{item.subMenu &&
 									item.subMenu.map((item, index) => {

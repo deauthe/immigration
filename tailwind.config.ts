@@ -1,3 +1,4 @@
+import { url } from "inspector";
 import type { Config } from "tailwindcss";
 const {
 	default: flattenColorPalette,
@@ -21,6 +22,7 @@ const config = {
 			},
 		},
 		extend: {
+			backgroundImage: {},
 			scrollBehavior: ["smooth"],
 			colors: {
 				//Daisy Ui colors
@@ -53,8 +55,8 @@ const config = {
 					foreground: "#ffd9d4",
 				},
 				secondary: {
-					DEFAULT: "#f0abfc",
-					foreground: "#140b16",
+					DEFAULT: "#7B1313",
+					foreground: "#ffffff",
 				},
 				destructive: {
 					DEFAULT: "hsl(var(--destructive))",

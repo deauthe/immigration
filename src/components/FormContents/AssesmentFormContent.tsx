@@ -67,11 +67,11 @@ const AssesmentFormContent = () => {
 	return (
 		<form
 			onSubmit={handleSubmit(onSubmit)}
-			className="du-form-control bg-transparent text-primary-content p-4 rounded-3xl"
+			className="du-form-control   p-4 rounded-3xl bg-transparent mx-auto w-full items-center flex flex-col gap-3 text-black"
 		>
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="email"
 				>
 					Email
@@ -82,7 +82,7 @@ const AssesmentFormContent = () => {
 					disabled
 					value={email || ("login first" as string)}
 					{...register("email")}
-					className="du-input-disabled du-input w-full max-w-md px-2 bg-transparent"
+					className="du-input-disabled du-input  w-full  px-2 bg-transparent"
 				/>
 				{errors.email && (
 					<p className="text-xs text-primary">{"please sign In first"}</p>
@@ -90,14 +90,14 @@ const AssesmentFormContent = () => {
 			</div>
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="mobileNo"
 				>
 					First Name
 				</Label>
 				<input
 					id="firstName"
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					type="text"
 					{...register("firstName", { required: "First name is required" })}
 				/>
@@ -110,13 +110,13 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="mobileNo"
 				>
 					Last Name
 				</Label>
 				<input
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="lastName"
 					type="text"
 					{...register("lastName", { required: "Last name is required" })}
@@ -130,7 +130,7 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="mobileNo"
 				>
 					Mobile No
@@ -139,7 +139,7 @@ const AssesmentFormContent = () => {
 					id="mobileNo"
 					type="text"
 					{...register("mobileNo")}
-					className="du-input du-input-bordered du-input-primary w-full max-w-md px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 				/>
 				{errors.mobileNo && (
 					<p className="text-xs text-primary">
@@ -150,7 +150,7 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="country"
 				>
 					Country
@@ -159,7 +159,7 @@ const AssesmentFormContent = () => {
 					id="country"
 					type="text"
 					{...register("country")}
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 				/>
 				{errors.country && (
 					<p className="text-xs text-primary">
@@ -170,7 +170,7 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="childrenNo"
 				>
 					Number of Children
@@ -179,7 +179,7 @@ const AssesmentFormContent = () => {
 					id="childrenNo"
 					type="number"
 					{...register("childrenNo")}
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 				/>
 				{errors.childrenNo && (
 					<p className="text-xs text-primary">
@@ -190,7 +190,7 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="age"
 				>
 					Age
@@ -199,7 +199,7 @@ const AssesmentFormContent = () => {
 					id="age"
 					type="number"
 					{...register("age")}
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 				/>
 				{errors.age && (
 					<p className="text-xs text-primary">
@@ -210,7 +210,12 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit 
+					
+					
+					
+					
+					uppercase font-light"
 					htmlFor="educationLevel"
 				>
 					Education Level
@@ -219,7 +224,7 @@ const AssesmentFormContent = () => {
 					defaultValue={"short"}
 					id="educationLevel"
 					{...register("educationLevel")}
-					className="du-select du-select-primary w-full max-w-lg bg-transparent"
+					className="du-select du-select-primary w-full  bg-transparent"
 				>
 					<option disabled>Pick one</option>
 					<option value="short">Short</option>
@@ -235,7 +240,7 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="educationField"
 				>
 					Education Field
@@ -244,7 +249,7 @@ const AssesmentFormContent = () => {
 					id="educationField"
 					defaultValue={"short"}
 					{...register("educationField")}
-					className="du-select du-select-primary w-full max-w-md bg-transparent"
+					className="du-select du-select-primary w-full  bg-transparent"
 				>
 					<option disabled>Pick one</option>
 					<option value="short">Short</option>
@@ -260,7 +265,7 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="englishLevel"
 				>
 					English Level
@@ -269,7 +274,7 @@ const AssesmentFormContent = () => {
 					id="englishLevel"
 					defaultValue={"short"}
 					{...register("englishLevel")}
-					className="du-select du-select-primary w-full max-w-md bg-transparent"
+					className="du-select du-select-primary w-full  bg-transparent"
 				>
 					<option disabled>Pick one</option>
 					<option value="short">Short</option>
@@ -285,13 +290,13 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="frenchLevel"
 				>
 					French Level
 				</Label>
 				<input
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="frenchLevel"
 					type="text"
 					{...register("frenchLevel")}
@@ -305,13 +310,13 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="ieltsScorce"
 				>
 					IELTS Score
 				</Label>
 				<input
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="ieltsScorce"
 					type="text"
 					{...register("ieltsScorce")}
@@ -323,9 +328,9 @@ const AssesmentFormContent = () => {
 				)}
 			</div>
 
-			<div className="mx-auto w-full flex gap-5 my-2">
+			<div className="mx-auto w-full flex justify-between items-center my-2">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="familyInCanada"
 				>
 					Family in Canada
@@ -333,7 +338,7 @@ const AssesmentFormContent = () => {
 				<input
 					id="familyInCanada"
 					type="checkbox"
-					className="du-checkbox du-checkbox-primary my-auto"
+					className="du-checkbox du-checkbox-primary my-auto size-8"
 					defaultChecked={false}
 					{...register("familyInCanada")}
 				/>
@@ -346,13 +351,13 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="travelHistory"
 				>
 					Travel History
 				</Label>
 				<input
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="travelHistory"
 					type="text"
 					{...register("travelHistory")}
@@ -366,13 +371,13 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="netWorth"
 				>
 					Net Worth(approximated in Canadian Dollars)
 				</Label>
 				<input
-					className="du-input du-input-bordered du-input-primary w-full max-w-xs px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="netWorth"
 					type="text"
 					{...register("netWorth")}
@@ -386,13 +391,13 @@ const AssesmentFormContent = () => {
 
 			<div className="mx-auto w-full ">
 				<Label
-					className="du-label-text du-label w-fit text-primary-content uppercase font-extralight"
+					className="du-label-text du-label w-fit  uppercase font-light"
 					htmlFor="comment"
 				>
 					Comment
 				</Label>
 				<input
-					className="du-textarea-lg du-textarea text-xs du-textarea-primary bg-transparent"
+					className="du-textarea-lg du-textarea shrink-0 text-wrap du-textarea-primary bg-transparent h-36 w-full justify-start p-0"
 					id="comment"
 					type="text"
 					{...register("comment")}
@@ -404,7 +409,7 @@ const AssesmentFormContent = () => {
 				)}
 			</div>
 
-			<button className="du-btn du-btn-primary my-2 max-w-xs" type="submit">
+			<button className="du-btn du-btn-primary my-2 " type="submit">
 				Submit
 			</button>
 		</form>

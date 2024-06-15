@@ -5,7 +5,7 @@ type Props = {};
 
 const ContactUs = (props: Props) => {
 	return (
-		<div className="mx-auto bg-gradient-to-tr from-black to-red-600 h-fit w-full p-10">
+		<div className="mx-auto bg-primary h-fit w-full p-10">
 			<div className="md:grid md:grid-cols-4 flex flex-col gap-5 text-center md:text-left">
 				<div className="col-span-3 flex flex-col gap-5">
 					<h1 className="text-3xl font-extralight text-white/[0.6]">

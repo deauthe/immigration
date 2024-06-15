@@ -15,7 +15,7 @@ const LoginButton = (props: Props) => {
 	if (session.data?.user?.name != null) {
 		return (
 			<button
-				className="du-btn du-glass bg-transparent rounded-full uppercase text-primary-content font-extralight hover:text-black transition-all duration-300"
+				className=" bg-white h-fit rounded-full du-btn-sm uppercase  font-extralight hover:text-black transition-all duration-300"
 				onClick={() => signOut()}
 			>
 				logout
@@ -24,7 +24,7 @@ const LoginButton = (props: Props) => {
 	} else {
 		return (
 			<button
-				className="du-btn du-btn-primary uppercase"
+				className="du-btn rounded-full du-btn-primary h-fit du-btn-sm uppercase"
 				onClick={() => signIn()}
 			>
 				Login
