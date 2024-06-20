@@ -69,8 +69,8 @@ const Navbar = () => {
 				{/* menu start  */}
 
 				<div
-					className={`min-h-full px-3 rounded-full absolute mx-auto left-0 right-0 w-fit   flex-row  gap-2 items-center hidden lg:flex py-2  ${
-						show ? " text-primary-content" : "bg-base-100/75 text-base-content"
+					className={`min-h-full px-3 rounded-full absolute mx-auto left-0 right-0 w-fit my-auto  flex-row  gap-2 items-center hidden lg:flex py-2  ${
+						show ? " text-primary-content" : "text-primary-content"
 					} `}
 				>
 					<Menu />
@@ -82,7 +82,7 @@ const Navbar = () => {
 						className={`du-btn-sm du-btn  rounded-full hover:scale-105 du-btn-primary `}
 						href={"/assesment-form"}
 					>
-						<span className={`font-extralight uppercase`}>
+						<span className={`font-normal uppercase my-auto`}>
 							Free consultation
 						</span>
 					</Link>

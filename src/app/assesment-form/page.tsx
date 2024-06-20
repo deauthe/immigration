@@ -1,16 +1,13 @@
 import AssesmentFormContent from "@/components/FormContents/AssesmentFormContent";
 import PrivacyPolicy from "@/components/FormContents/PrivacyPolicy";
 import WorldMapBackground from "@/components/mainComponents/WorldMapBackground";
+import BasicTemplate from "@/components/Templates/BasicTemplate";
 
 const onSubmit = () => {};
 
 export default function AssesmentPage() {
 	return (
-		<div className="py-16 mx-auto items-center flex  flex-col  gap-0 bg-transparent lg:px-32 relative">
-			<div className="bg-gradient-to-b from-primary to-secondary absolute w-screen h-[500px] top-0 md:rounded-b-[20%] z-10"></div>
-			<div className="inset-0 ">
-				<WorldMapBackground />
-			</div>
+		<BasicTemplate className="" worldMapBackground={true}>
 			<div className="w-full text-center md:gap-10 gap-5  flex flex-col z-10 px-5 md:px-0">
 				<div className="lg:text-4xl md:text-3xl text-2xl font-extrabold  tracking-tighter w-fit mx-auto uppercase text-white text-center">
 					Immigration assessment form
@@ -31,6 +28,6 @@ export default function AssesmentPage() {
 			<div className="mt-5">
 				<PrivacyPolicy />
 			</div>
-		</div>
+		</BasicTemplate>
 	);
 }

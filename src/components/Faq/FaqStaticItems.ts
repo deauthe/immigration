@@ -30,3 +30,26 @@ export const FaqItems: FaqItemTypes[] = [
 			"We will be launching soon. Please sign up and stay updated with recent news and launch date.",
 	},
 ];
+
+interface NavLinkType {
+	name: string;
+	href: string;
+}
+export const navBarNavLinks: NavLinkType[] = [
+	{ name: "Home", href: "/" },
+	{ name: "About", href: "/about-us" },
+	{ name: "study", href: "/study" },
+];
+export const footerNavLinks: NavLinkType[] = [
+	{ name: "Home", href: "/" },
+	{ name: "About", href: "/about-us" },
+	{ name: "Contact", href: "/contact" },
+	{ name: "study", href: "/study" },
+	{ name: "express entry", href: "/express-entry" },
+	{ name: "vacation", href: "/vacation" },
+	{ name: "our team", href: "/team" },
+	{ name: "work", href: "/work" },
+	{ name: "faq", href: "/faq" },
+	{ name: "privacy policy", href: "/privacy-policy" },
+	{ name: "terms and conditions", href: "/terms-and-conditions" },
+];

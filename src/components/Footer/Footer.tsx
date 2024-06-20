@@ -2,25 +2,25 @@ import Link from "next/link";
 import React from "react";
 import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
 import Wrapper from "../mainComponents/Wrapper";
+import { footerNavLinks } from "../Faq/FaqStaticItems";
 
 const Footer = () => {
 	return (
 		<footer className="du-footer du-footer-center p-10 bg-primary text-primary-content rounded-none">
-			<nav className="grid grid-flow-col gap-4">
-				<a className="du-link du-link-hover" href="/#AboutUs">
-					About us
-				</a>
-				<a className="du-link du-link-hover" href="/#ContactUs">
-					Contact
-				</a>
-				<a className="du-link du-link-hover" href="/#Features">
-					Why Us
-				</a>
-				<a className="du-link du-link-hover" href="/#Faqs">
-					Faq
-				</a>
+			<nav className="grid grid-cols-3 text-left gap-x-10 gap-y-4 uppercase ">
+				{footerNavLinks.map((link) => (
+					<Link
+						key={link.name}
+						href={link.href}
+						className="du-link du-link-hover col-span-1 mr-auto"
+					>
+						{link.name}
+					</Link>
+				))}
 			</nav>
-			<div className="text-3xl font-bold tracking-tighter">BMOR</div>
+			<Link href={"/"} className="text-3xl font-bold tracking-tighter">
+				BMOR
+			</Link>
 			<nav>
 				<div className="grid grid-flow-col gap-4">
 					<a>
