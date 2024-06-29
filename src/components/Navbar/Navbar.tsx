@@ -5,41 +5,31 @@ import Menu from "./Menu";
 import MenuMobile from "./MenuMobile";
 import { usePathname } from "next/navigation";
 import LoginButton from "../LoginButton";
+import Image from "next/image";
 
 const Navbar = () => {
-	const [showCatMenu, setShowCatMenu] = useState<boolean>(false);
 	const [show, setShow] = useState<boolean>(false);
-	const [lastScrollY, setLastScrollY] = useState<number>(0);
-	const [textColor, setTextColor] = useState<string>("text-black");
-	const [active, setActive] = useState<boolean>(true);
 
 	const pathName = usePathname();
 
 	const controlNavbar = () => {
 		if (window.scrollY >= 40) {
 			setShow(true);
-			setTextColor("text-white");
 		} else {
 			setShow(false);
-			setTextColor("text-black");
 		}
 	};
 
 	useEffect(() => {
-		if (pathName.includes("assesment-form")) {
-			setActive(false);
-		} else {
-			setActive(true);
-		}
 		window.addEventListener("scroll", controlNavbar);
 		return () => {
 			window.removeEventListener("scroll", controlNavbar);
 		};
-	}, [lastScrollY, pathName]);
+	}, [pathName]);
 
 	return (
 		<div
-			className={` w-full h-[50px] items-center md:h-[80px]  z-20 fixed  top-0 transition-all duration-500  md:px-5 px-1    `}
+			className={` w-full h-[50px] items-center md:h-[80px]  z-50 fixed  top-0 transition-all duration-500  md:px-5 px-1    `}
 		>
 			{/* <div
     className={`bg-red-w-full flex justify-between`}
@@ -53,15 +43,14 @@ const Navbar = () => {
 			>
 				<div className="flex gap-2 items-center ml-5">
 					<Link href="/">
-						<div className=" flex items-end gap-2 ">
-							{/* <img
-							src="/logo.png"
-							alt="logo"
-							className="w-[40px] md:w-[50px] drop-shadow-lg"
-						/> */}
-							<p className="md:text-3xl text-xl font-extrabold font-heading1 text-primary-content">
-								BMOR
-							</p>
+						<div className=" flex items-center w-fit h-full gap-2 ">
+							<Image
+								src="/images/logo.png"
+								alt="logo"
+								width={300}
+								height={300}
+								className="h-full w-32 drop-shadow-lg text-primary-content stroke-primary-foreground"
+							/>
 						</div>
 					</Link>
 				</div>

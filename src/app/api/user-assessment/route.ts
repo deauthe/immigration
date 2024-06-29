@@ -1,12 +1,13 @@
+"use server";
 import { NextRequest, NextResponse } from "next/server";
-import { createUserWithAssessment } from "@/lib/api/user";
+import { createUserAssesment } from "@/lib/api/user";
 
 export async function POST(req: NextRequest) {
 	const body = await req.json();
-	const { username, assessment } = body;
+	const { email, ...assessment } = body;
 
 	try {
-		const newUser = createUserWithAssessment({ username, assessment });
+		const newUser = await createUserAssesment({ email, ...assessment });
 		return NextResponse.json(newUser, { status: 200 });
 	} catch (error) {
 		console.error("Error creating user:", error);

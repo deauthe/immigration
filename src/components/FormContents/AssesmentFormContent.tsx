@@ -1,67 +1,87 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { Label } from "@/components/ui/label";
-
-import { CreateUserAssesmentInput } from "@/types/user";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { UserAssessmentInputSchema } from "@/types/user";
 import { useRouter } from "next/navigation";
 import { useToast } from "../ui/use-toast";
 import { title } from "process";
 import { useSession } from "next-auth/react";
+import * as z from "zod";
+import Input from "./Input";
+import LoginButton from "../LoginButton";
+type UserAssesment = z.infer<typeof UserAssessmentInputSchema>;
 
 const AssesmentFormContent = () => {
 	const {
 		register,
 		formState: { errors, touchedFields },
 		handleSubmit,
-	} = useForm<CreateUserAssesmentInput>();
+		setValue,
+		clearErrors,
+	} = useForm<UserAssesment>({
+		resolver: zodResolver(UserAssessmentInputSchema),
+		defaultValues: { age: undefined },
+	});
+
 	const [email, setEmail] = useState<string>();
+	const [isLoading, setIsloading] = useState(false);
 
 	const router = useRouter();
 	const { toast } = useToast();
 	const session = useSession();
 
 	useEffect(() => {
-		setEmail(session.data?.user?.email || undefined);
+		const email = session.data?.user?.email;
+		if (email) {
+			setEmail(email);
+			setValue("email", email);
+		}
 	}, [session]);
 
-	const onSubmit: SubmitHandler<CreateUserAssesmentInput> = (
-		data: CreateUserAssesmentInput
-	) => {
-		console.log(data);
-		if (!email) {
-			toast({
-				title: "Please login First",
-				action: (
-					<div className="mx-auto text-right  font-semibold tracking-tight ">
-						{"Couldn't Submit Form"}
-					</div>
-				),
-			});
-			return;
-		}
+	useEffect(() => {
+		console.log(errors);
+	}, [errors]);
 
-		try {
-			toast({
-				title: "we will contact you shortly",
-				action: (
-					<div className="mx-auto text-right  font-semibold tracking-tight ">
-						form submitted successfully
-					</div>
-				),
-			});
-		} catch (error) {
-			toast({
-				title: "An Error Occured",
-				action: (
-					<div className="mx-auto text-right  font-semibold tracking-tight ">
-						{"Couldn't Submit Form"}
-					</div>
-				),
-			});
-		}
+	const onSubmit: SubmitHandler<UserAssesment> = (data: UserAssesment) => {
+		clearErrors();
+		setIsloading(true);
+		const parseSuccess = UserAssessmentInputSchema.safeParse(data);
+		console.log("user data:", data, "parseSuccess:", parseSuccess);
+		if (parseSuccess.success) {
+			try {
+				axios
+					.post("/api/user-assessment", data)
+					.then((res) => {
+						console.log("response", res.data);
+						toast({
+							title: "Success",
+							description: `your response has been submitted ${res.data?.firstName}`,
 
-		router.push("/");
+							duration: 5000,
+						});
+						router.push("/");
+					})
+					.catch((err) => {
+						console.error(err);
+					})
+					.finally(() => {
+						setIsloading(false);
+						console.log("done hai");
+					});
+			} catch (err) {
+				console.log("error in creating user assesment", err);
+			}
+		} else {
+		}
+	};
+	const isEmpty = (value: string | null | undefined) => {
+		//we do this because zod resolver spits out an error for number type when in an input even if it's the correct type
+		//this function is then hooked on to the register value inside the valueAsNumber field
+		//weird but necessary
+		return value == null || value.trim() === "";
 	};
 
 	return (
@@ -72,20 +92,26 @@ const AssesmentFormContent = () => {
 			<div className="mx-auto w-full ">
 				<Label
 					className="du-label-text du-label w-fit  uppercase font-light"
-					htmlFor="email"
+					htmlFor="mobileNo"
 				>
 					Email
 				</Label>
 				<input
 					id="email"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					type="email"
+					value={email || "please login first"}
 					disabled
-					value={email || ("login first" as string)}
-					{...register("email")}
-					className="du-input-disabled du-input  w-full  px-2 bg-transparent"
 				/>
+				{!email && (
+					<div className="my-2">
+						<LoginButton />
+					</div>
+				)}
 				{errors.email && (
-					<p className="text-xs text-primary">{"please sign In first"}</p>
+					<p className="text-xs text-primary">
+						{JSON.stringify(errors.email.message)}
+					</p>
 				)}
 			</div>
 			<div className="mx-auto w-full ">
@@ -96,6 +122,7 @@ const AssesmentFormContent = () => {
 					First Name
 				</Label>
 				<input
+					disabled={isLoading}
 					id="firstName"
 					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					type="text"
@@ -116,6 +143,7 @@ const AssesmentFormContent = () => {
 					Last Name
 				</Label>
 				<input
+					disabled={isLoading}
 					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="lastName"
 					type="text"
@@ -136,6 +164,7 @@ const AssesmentFormContent = () => {
 					Mobile No
 				</Label>
 				<input
+					disabled={isLoading}
 					id="mobileNo"
 					type="text"
 					{...register("mobileNo")}
@@ -178,7 +207,8 @@ const AssesmentFormContent = () => {
 				<input
 					id="childrenNo"
 					type="number"
-					{...register("childrenNo")}
+					{...(register("childrenNo"),
+					{ valueAsNumber: !isEmpty("myNumberField") })}
 					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 				/>
 				{errors.childrenNo && (
@@ -198,7 +228,7 @@ const AssesmentFormContent = () => {
 				<input
 					id="age"
 					type="number"
-					{...register("age")}
+					{...(register("age"), { valueAsNumber: !isEmpty("myNumberField") })}
 					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 				/>
 				{errors.age && (
@@ -221,15 +251,15 @@ const AssesmentFormContent = () => {
 					Education Level
 				</Label>
 				<select
-					defaultValue={"short"}
+					defaultValue={undefined}
 					id="educationLevel"
 					{...register("educationLevel")}
 					className="du-select du-select-primary w-full  bg-transparent"
 				>
 					<option disabled>Pick one</option>
-					<option value="short">Short</option>
-					<option value="medium">Medium</option>
-					<option value="long">Long</option>
+					<option value="Primary">Primary</option>
+					<option value="Secondary">Secondary</option>
+					<option value="Tertiary">Teritary</option>
 				</select>
 				{errors.educationLevel && (
 					<p className="text-xs text-primary">
@@ -247,7 +277,7 @@ const AssesmentFormContent = () => {
 				</Label>
 				<select
 					id="educationField"
-					defaultValue={"short"}
+					defaultValue={""}
 					{...register("educationField")}
 					className="du-select du-select-primary w-full  bg-transparent"
 				>
@@ -277,9 +307,9 @@ const AssesmentFormContent = () => {
 					className="du-select du-select-primary w-full  bg-transparent"
 				>
 					<option disabled>Pick one</option>
-					<option value="short">Short</option>
-					<option value="medium">Medium</option>
-					<option value="long">Long</option>
+					<option value="Beginner">Beginner</option>
+					<option value="Intermediate">Intermediate</option>
+					<option value="Advanced">Advanced</option>
 				</select>
 				{errors.englishLevel && (
 					<p className="text-xs text-primary">
@@ -311,7 +341,7 @@ const AssesmentFormContent = () => {
 			<div className="mx-auto w-full ">
 				<Label
 					className="du-label-text du-label w-fit  uppercase font-light"
-					htmlFor="ieltsScorce"
+					htmlFor="ieltsScore"
 				>
 					IELTS Score
 				</Label>
@@ -319,11 +349,11 @@ const AssesmentFormContent = () => {
 					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
 					id="ieltsScorce"
 					type="text"
-					{...register("ieltsScorce")}
+					{...register("ieltsScore")}
 				/>
-				{errors.ieltsScorce && (
+				{errors.ieltsScore && (
 					<p className="text-xs text-primary">
-						{JSON.stringify(errors.ieltsScorce.message)}
+						{JSON.stringify(errors.ieltsScore.message)}
 					</p>
 				)}
 			</div>

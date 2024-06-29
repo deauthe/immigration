@@ -1,88 +1,69 @@
-import {
-	CreateUserAssesmentInput,
-	CreateUserWithAssessmentInput,
-} from "@/types/user";
+import { UserAssessmentInputSchema } from "@/types/user";
 import prisma from "@/lib/prisma";
+import { z } from "zod";
 
-export async function createUser(input: CreateUserWithAssessmentInput) {
-	let newUser;
-	if (input.assessment) {
-		newUser = await prisma.user.create({
-			data: {
-				username: input.username,
-				userAssesment: {
-					create: {
-						...input.assessment,
-					},
-				},
-			},
-		});
-	} else {
-		newUser = await prisma.user.create({
-			data: {
-				username: input.username,
-			},
-		});
-	}
-
-	return newUser;
-}
-
-export async function createUserWithAssessment(
-	input: CreateUserWithAssessmentInput
+export async function createUserAssesment(
+	input: z.infer<typeof UserAssessmentInputSchema>
 ) {
-	let newUser;
-	if (input.assessment) {
-		newUser = await prisma.user.create({
-			data: {
-				username: input.username,
-				userAssesment: {
-					create: {
-						...input.assessment,
-					},
-				},
-			},
-		});
+	if (!UserAssessmentInputSchema.safeParse(input).success)
+		throw new Error("Invalid input");
+
+	const { email, ...assessmentData } = input;
+	console.log("I got called");
+
+	//finding userId associated with email
+	const user = await getUser({ email });
+	if (!user) {
+		throw new Error("User not found");
 	} else {
-		newUser = await prisma.user.create({
-			data: {
-				username: input.username,
+		const userId = user.id;
+		if (user.userAssesment?.id) {
+			//updating existing assesment
+			try {
+				const newAssesment = await prisma.userAssesment.update({
+					where: {
+						id: user.userAssesment.id,
+					},
+					data: {
+						...assessmentData,
+					},
+				});
+				return newAssesment;
+			} catch (error) {
+				throw new Error("Error updating assesment");
+			}
+		} else {
+			//creating new assesment
+			try {
+				const newAssesment = await prisma.userAssesment.create({
+					data: {
+						...assessmentData,
+						user: {
+							connect: { id: userId },
+						},
+					},
+				});
+				return newAssesment;
+			} catch (error) {
+				throw new Error("Error creating assesment");
+			}
+		}
+	}
+}
+
+export async function getUser({ email }: { email: string }) {
+	try {
+		const user = await prisma.user.findUnique({
+			where: {
+				email,
+			},
+			include: {
+				userAssesment: true,
 			},
 		});
+		return user;
+	} catch (error) {
+		console.log(error);
+		throw new Error("Error fetching user");
 	}
-
-	return newUser;
-}
-
-export async function createUserAssesment(input: CreateUserAssesmentInput) {
-	const { userId, ...assessmentData } = input;
-
-	const newAssesment = await prisma.userAssesment.create({
-		data: {
-			...assessmentData,
-			user: {
-				connect: { id: userId },
-			},
-		},
-	});
-
-	return newAssesment;
-}
-
-export async function getUserAssesment(userId: string) {
-	const result = await prisma.userAssesment.delete({
-		where: {
-			userId: userId,
-		},
-	});
-	console.log(result);
-}
-
-export async function deleteUserAssesment(userId: string) {
-	const result = await prisma.userAssesment.delete({
-		where: {
-			userId,
-		},
-	});
-	console.log(result);
 }

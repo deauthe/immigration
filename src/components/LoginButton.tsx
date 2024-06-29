@@ -1,7 +1,8 @@
 "use client";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 import React, { useEffect } from "react";
+import { GiRamProfile } from "react-icons/gi";
 
 type Props = {};
 
@@ -14,12 +15,26 @@ const LoginButton = (props: Props) => {
 
 	if (session.data?.user?.name != null) {
 		return (
-			<button
-				className=" bg-white h-fit rounded-full du-btn-sm uppercase  font-extralight hover:text-black transition-all duration-300"
-				onClick={() => signOut()}
-			>
-				logout
-			</button>
+			<div className="flex flex-row gap-2 ">
+				<button
+					className=" bg-white h-fit rounded-full du-btn du-btn-sm uppercase hover:scale-105  font-extralight text-black transition-all duration-300"
+					onClick={() => signOut()}
+				>
+					logout
+				</button>
+				{session?.data?.user?.image && (
+					<div className="avatar">
+						<div className="w-8 rounded-full overflow-hidden">
+							<Image
+								src={session?.data?.user?.image || "profile.png"}
+								alt=""
+								width={100}
+								height={100}
+							/>
+						</div>
+					</div>
+				)}
+			</div>
 		);
 	} else {
 		return (

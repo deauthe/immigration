@@ -31,51 +31,23 @@ export const navMenuData: MenuItem[] = [
 	{
 		id: 1,
 		name: "About US",
-		url: "/#AboutUs",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/#AboutUs" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
+		url: "about-us",
 	},
 
 	{
 		id: 1,
 		name: "Work",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
+		url: "/work",
 	},
 	{
 		id: 1,
 		name: "Study",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
+		url: "study",
 	},
 	{
 		id: 1,
 		name: "Visit",
-		url: "/",
-		subMenu: [
-			{ id: 1, name: "about us", url: "/" },
-			{ id: 2, name: "Teams", url: "/" },
-			{ id: 3, name: "Faqs", url: "/" },
-			{ id: 4, name: "why us", url: "/" },
-			{ id: 5, name: "Career", url: "/" },
-		],
+		url: "visit",
 	},
 ];
 
@@ -86,15 +58,15 @@ const Menu = () => {
 				{navMenuData.map((item, index) => {
 					return (
 						<div key={index} className="du-dropdown du-dropdown-hover ">
-							<div className="uppercase font-light bg-transparent mx-1  hover:cursor-pointer">
+							<div className="uppercase font-light bg-transparent mx-1  hover:cursor-pointer hover:scale-105 hover:text-white transition-all duration-200">
 								{item.name}
 							</div>
-							<ul
-								tabIndex={0}
-								className="du-dropdown-content z-[1] du-menu du-card-bordered p-2 shadow bg-primary/90  uppercase rounded-box w-52 "
-							>
-								{item.subMenu &&
-									item.subMenu.map((item, index) => {
+							{item.subMenu && (
+								<ul
+									tabIndex={0}
+									className="du-dropdown-content z-[1] du-menu du-card-bordered p-2 shadow bg-primary/90  uppercase rounded-box w-52 "
+								>
+									{item.subMenu.map((item, index) => {
 										return (
 											<ListItem
 												key={item.name}
@@ -103,7 +75,8 @@ const Menu = () => {
 											></ListItem>
 										);
 									})}
-							</ul>
+								</ul>
+							)}
 						</div>
 					);
 				})}

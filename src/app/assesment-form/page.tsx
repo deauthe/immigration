@@ -13,11 +13,10 @@ export default function AssesmentPage() {
 					Immigration assessment form
 				</div>
 				<div className="md:w-1/2 px-5 md:px-0 mx-auto text-primary-content">
-					Mana Immigration is a leading Canadian immigration law firm with
-					everything you need to live your dreams. Please spend a few minutes
-					completing the Immigration assessment form of your choice. Once you
-					complete the form, Mana Immigration will contact you to provide
-					further assistance.
+					Please spend some time filling out the Immigration Assessment form
+					below, to ensure that we are able to provide the most accurate,
+					relevant information for your case. After you have completed the form,
+					BMOR immigration will contact you to provide further assistance.
 				</div>
 			</div>
 			<div className="md:w-2/3 items-center justify-between flex p-3 bg-white z-10 mt-5 rounded-md shadow-lg mx-1 md:mx-0">

@@ -80,27 +80,27 @@ function Card({ title, description, icon }: CardProps) {
 
 const staticCardInfo: CardProps[] = [
 	{
-		title: "CREDIBILITY",
+		title: "Reliability",
 		description:
-			"We have a credible track record and a unique approach towards each of our clients. We build, in our clients, the trust and confidence that we are here for you every step of the way.",
+			"We value our relationships with our clients. That’s why we aim to create the best possible experience for you during our consultations. You can rest assured that we at BMOR will be here to support you every step of the way, and ensure you reach your goals, ",
 		icon: <VscWorkspaceTrusted />,
 	},
 	{
-		title: "COMMITMENT TO ETHICS",
+		title: "Humanism",
 		description:
-			"Your immigration, for us, is not just business, but the true purpose of our service towards you and your Canadian dream.",
+			"There’s no cookie-cutter client. Each individual is different, with a unique story and path in life. That’s why our consultants will use their immigration expertise to find the best solution for YOU.",
 		icon: <VscArchive />,
 	},
 	{
-		title: "CREATIVE PERSPECTIVES",
+		title: "Ethics:",
 		description:
-			"Immigration Laws and trends keep changing on a day to day basis, and it is our professional responsibility to stay abreast with the latest happenings for each application and representation..",
+			"Immigration is not simply business. It is the key to the dreams and hopes of many people, including you. We respect this, and are committed to help you fulfill your dreams.",
 		icon: <VscArrowCircleDown />,
 	},
 	{
-		title: "CONSISTENT KNOWLEDGE UPDATE",
+		title: "Responsibility",
 		description:
-			"Every client has a different case and story, and effectively strategizing to arrive at the best possible solution with our experience and knowledge of Immigration law, is at the core of our service.",
+			"The world of immigration is ever-changing, and our consultants are highly skilled with providing the most up-to-date information on laws and trends. This ensures that your application is as precise as possible.",
 		icon: <VscAccount />,
 	},
 ];

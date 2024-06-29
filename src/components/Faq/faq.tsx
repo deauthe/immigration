@@ -1,20 +1,14 @@
 import React from "react";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui/accordion";
 import { FaqItems } from "./FaqStaticItems";
 
 const FaqSection = () => {
 	return (
 		<div
-			className="du-hero h-fit bg-gradient-to-tl from-red-900/80 to-white w-full flex flex-col py-5 rounded-none "
+			className="du-hero h-fit b w-full flex flex-col py-5 rounded-none "
 			style={{ backgroundImage: "url(/toronto.jpg)" }}
 		>
 			<div className="mx-auto mb-2 ">
-				<h1 className="lg:text-9xl md:text-7xl text-4xl tracking-tighter bg-gradient-to-l from-red-600 to-primary-content stroke-black  text-transparent box-content font-oswald font-bold mx-auto bg-clip-text  lg:px-2">
+				<h1 className="lg:text-9xl md:text-7xl text-4xl tracking-tighter bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-black to-black/50 [-webkit-text-fill-color:transparent] stroke-black  text-transparent box-content font-oswald font-bold mx-auto bg-clip-text  lg:px-2">
 					FAQs
 				</h1>
 			</div>

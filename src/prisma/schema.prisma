@@ -9,10 +9,18 @@ generator client {
 
 model User {
   id              String           @id @default(uuid())
-  username        String           @db.VarChar(255) @unique
   createdAt       DateTime         @default(now()) @db.Timestamp(6)
+  emailVerified DateTime? @map("email_verified")
+  email           String?           @db.VarChar(255) @unique
+  name            String?
+  image           String?
+  password        String?
   userAssesment   UserAssesment?
+  accounts      Account[]
+  @@map("users")
 }
+
+
 
 model UserAssesment {
   id             String     @id @default(uuid())
@@ -26,10 +34,10 @@ model UserAssesment {
   childrenNo     Int?
   age            Int?
   educationLevel EducationLevel?
-  educationField EducationField?
+  educationField String?
   englishLevel   EnglishLevel?
   frenchLevel    String?
-  ieltsScorce    String?
+  ieltsScore    String?
   familyInCanada Boolean
   travelHistory  String?
   netWorth       String?
@@ -38,19 +46,38 @@ model UserAssesment {
   userId         String  @unique
 }
 
-enum EducationLevel{
-    short 
-    medium
-    long
+// model from Auth.js prisma adapter implementation (session and token) 
+model Account {
+  id                 String  @id @default(cuid())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+ 
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+ 
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
 }
 
-enum EducationField{
-    short 
-    medium
-    long
+
+
+enum EducationLevel{
+    Primary 
+    Secondary
+    Tertiary
 }
+
+
 enum EnglishLevel{
-    short 
-    medium
-    long
+    Beginner 
+    Intermediate
+    Advanced
 }
