@@ -1,8 +1,6 @@
 import Wrapper from "@/components/mainComponents/Wrapper";
 import Image from "next/image";
-import Link from "next/link";
-import React, { ReactNode } from "react";
-import { GiLaurelsTrophy } from "react-icons/gi";
+import React from "react";
 
 const AboutUs = () => {
 	return (

@@ -1,14 +1,12 @@
-import ContactUs from "@/components/ContactUs/ContactUs";
 import FaqSection from "@/components/Faq/faq";
-import AboutUs from "@/components/home/aboutUs/AboutUs";
+
 import Features from "@/components/home/Features/Features";
-import Hero from "@/components/home/hero/Hero";
+
 import Hero2 from "@/components/home/hero/Hero2";
 import HomeCard from "@/components/home/HomeCard";
-import WhyUs from "@/components/home/whyus/WhyUs";
+
 import WorldMapBackground from "@/components/mainComponents/WorldMapBackground";
 import PageBreak from "@/components/PageBreak";
-import { CldImage } from "next-cloudinary";
 
 export default function Home() {
 	return (
