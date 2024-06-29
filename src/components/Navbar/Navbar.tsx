@@ -44,13 +44,16 @@ const Navbar = () => {
 				<div className="flex gap-2 items-center ml-5">
 					<Link href="/">
 						<div className=" flex items-center w-fit h-full gap-2 ">
-							<Image
+							{/* <Image
 								src="/images/logo.png"
 								alt="logo"
 								width={300}
 								height={300}
 								className="h-full w-32 drop-shadow-lg text-primary-content stroke-primary-foreground"
-							/>
+							/> */}
+							<div className="text-primary-content text-2xl font-bold">
+								BMOR
+							</div>
 						</div>
 					</Link>
 				</div>
