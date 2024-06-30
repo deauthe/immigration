@@ -8,31 +8,34 @@ import {
 	VscArrowCircleDown,
 	VscWorkspaceTrusted,
 } from "react-icons/vsc";
+import BasicTemplateTopCard, {
+	BasicTemplateTopCardProps,
+} from "@/components/Cards/BasicTemplateTopCard";
+import { HomeCardProps } from "@/components/home/HomeCard";
+import PageBreak from "@/components/PageBreak";
+
+const topCardStatics: BasicTemplateTopCardProps = {
+	title: "About Us",
+	description: `A Regulated Canadian Immigration Consultant (RCIC) licensed under the Immigration Consultants of Canada Regulatory Council (ICCRC) with 
+					license number R706180, he is also a member of The Canadian Association of Professional Immigration Consultants (CAPIC) member ID R21006.
+                    He is the driving force and the face of Ask Kubeir. An ardent believer who is Forever Hopeful, his commitment, passion and transparency 
+					towards his work is what his clients and audience seek. Certification of Recognition`,
+	image: {
+		height: 600,
+		width: 600,
+		src: "/about-us.png",
+	},
+};
 
 function AboutUs() {
 	return (
 		<BasicTemplate worldMapBackground={true} className="">
-			<div className="md:grid grid-cols-2 flex flex-col md:gap-10 gap-5 text-primary-content w-full z-10  lg:px-32 md:px-16 px-10 py-5">
-				{/* image  */}
-				<div className="max-h-96">
-					<Image
-						src={"/about-us.png"}
-						alt="about us"
-						width={600}
-						height={600}
-						className="w-full h-full object-cover rounded-2xl"
-					/>
-				</div>
+			<BasicTemplateTopCard
+				title={topCardStatics.title}
+				description={topCardStatics.description}
+				image={topCardStatics.image}
+			/>
 
-				{/* text  */}
-				<div className="flex flex-col gap-3 md:gap-6 my-auto">
-					<h1 className="text-3xl md:text-5xl font-bold">About Us</h1>
-					<p>
-						{`A Regulated Canadian Immigration Consultant (RCIC) licensed under the Immigration Consultants of Canada Regulatory Council (ICCRC) with license number R706180, he is also a member of The Canadian Association of Professional Immigration Consultants (CAPIC) member ID R21006.
-                    He is the driving force and the face of Ask Kubeir. An ardent believer who is Forever Hopeful, his commitment, passion and transparency towards his work is what his clients and audience seek. Certification of Recognition`}
-					</p>
-				</div>
-			</div>
 			<div className="relative w-full  z-10 mt-10">
 				<AboutUsCard />
 			</div>
@@ -40,17 +43,10 @@ function AboutUs() {
 			{/* pillars/ key points  */}
 			<div className="z-10 w-full mt-10 flex flex-col gap-10">
 				{/* heading  */}
-				<div className="grid grid-cols-3 lg:mx-20 md:mx-10 mx-5 gap-3">
-					<hr className="my-auto bg-neutral/20 h-[2px]" />
-
-					<h1 className="uppercase text-xl md:text-2xl lg:text-3xl text-neutral-content font-bold tracking-tighter w-fit mx-auto">
-						Pillars of BMOR
-					</h1>
-					<hr className="my-auto bg-neutral/20 h-[2px]" />
-				</div>
+				<PageBreak label="Pillars of bmor" />
 
 				{/* grid  */}
-				<div className="grid gap-5 grid-cols-2 lg:mx-20 md:mx-10 mx-5">
+				<div className="flex flex-col gap-2 md:grid md:gap-5 md:grid-cols-2 lg:mx-20 md:mx-10 mx-5">
 					{staticCardInfo.map((card, index) => {
 						return <Card key={index} {...card} />;
 					})}
