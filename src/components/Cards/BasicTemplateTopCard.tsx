@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { ButtonHTMLAttributes } from "react";
+import Wrapper from "../mainComponents/Wrapper";
 
 export type BasicTemplateTopCardProps = {
 	title: string;
@@ -32,11 +33,9 @@ const BasicTemplateTopCard = ({
 	image,
 }: BasicTemplateTopCardProps) => {
 	return (
-		<div
-			className={`w-full flex flex-col ${className} z-20 lg:px-10 md:px-5 px-2`}
-		>
-			<div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:gap-10 md:gap-5 w-fit  text-primary-content md:pt-10 items-center ">
-				<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 text-center md:text-left">
+		<div className={`w-full flex flex-col ${className} z-20 lg:px-10 md:px-5 `}>
+			<div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:gap-10 md:gap-5 w-full  text-primary-content  ">
+				<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 text-center md:text-left ">
 					<h1 className="lg:text-7xl text-4xl font-bold tracking-tight">
 						{title}
 					</h1>
@@ -65,13 +64,12 @@ const BasicTemplateTopCard = ({
 					</div>
 					{/* button seciton end  */}
 				</div>
-				<div className="w-full h-fit md:max-h-80 lg:max-h-96 xl:max-h-max rounded-3xl max-h-96 overflow-hidden mx-auto du-image-full ">
+				<div className="relative  md:max-h-96   w-full mx-auto  min-h-80">
 					<Image
 						src={image.src}
-						width={image.width}
-						height={image.height}
+						fill
 						alt=""
-						className="mx-auto object-cover rounded-3xl "
+						className=" lg:max-w-[600px] mx-auto"
 					/>
 				</div>
 			</div>

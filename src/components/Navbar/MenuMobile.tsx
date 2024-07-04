@@ -44,29 +44,35 @@ const MenuMobile = (props: Props) => {
 					</SheetTitle>
 				</SheetHeader>
 				{/* daisy ui magic for nested list  */}
-				<ul className="du-menu bg-transparent w-full du-rounded-box active:du-glass prose-md uppercase text-md gap-5">
-					{navMenuData.map((item, index) => {
-						return (
+				<ul className="du-menu bg-transparent w-full du-rounded-box active:du-glass prose-md uppercase text-md gap-2">
+					{navMenuData.map((item, index) =>
+						item?.subMenu ? (
 							<li key={index}>
 								<details>
 									<summary>{item.name}</summary>
 									<ul>
-										{item?.subMenu?.map((sublink, index) => {
-											return (
-												<li key={index}>
-													<Link href={sublink.url as string}>
-														{sublink.name}
-													</Link>
-												</li>
-											);
-										})}
+										{item.subMenu.map((sublink, subIndex) => (
+											<li key={subIndex}>
+												<Link href={sublink.url as string}>{sublink.name}</Link>
+											</li>
+										))}
 									</ul>
 								</details>
 							</li>
-						);
-					})}
+						) : (
+							<li key={index}>
+								<Link
+									href={item.url as string}
+									className="du-link du-link-hover"
+								>
+									{item.name}
+								</Link>
+							</li>
+						)
+					)}
 					<LoginButton />
 				</ul>
+
 				{/* end of nested lists  */}
 				<SheetFooter>
 					<aside>

@@ -29,7 +29,7 @@ export default function Home() {
 			<div className="">
 				{/* <Hero /> */}
 				<Hero2 />
-				<div className="relative ">
+				<div className="relative">
 					<div className="relative z-10 bottom-20 lg:mx-20 md:mx-10 mx-5 max-h-96">
 						<HomeCard
 							image="/images/homeCard.jpeg"

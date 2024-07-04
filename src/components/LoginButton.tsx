@@ -17,7 +17,7 @@ const LoginButton = (props: Props) => {
 		return (
 			<div className="flex flex-row gap-2 ">
 				<button
-					className=" bg-white h-fit rounded-full du-btn du-btn-sm uppercase hover:scale-105  font-extralight text-black transition-all duration-300"
+					className=" bg-secondary h-fit rounded-full du-btn du-btn-sm uppercase hover:scale-105 border-none text-primary-content transition-all duration-300"
 					onClick={() => signOut()}
 				>
 					logout

@@ -18,7 +18,7 @@ function BasicTemplate({
 				className
 			)}
 		>
-			<div className="bg-gradient-to-b from-primary to-secondary absolute w-screen lg:h-[700px] md:h-[600px] h-[500px] top-0 md:rounded-b-[20%] z-10"></div>
+			<div className="bg-gradient-to-b from-primary to-secondary absolute w-screen xl:h-[800px] lg:h-[700px] md:h-[700px] h-[500px] top-0 md:rounded-b-[20%] z-10"></div>
 			{worldMapBackground && (
 				<div className="inset-0 ">
 					<WorldMapBackground />

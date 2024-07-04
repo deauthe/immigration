@@ -35,10 +35,10 @@ const Navbar = () => {
     className={`bg-red-w-full flex justify-between`}
   > */}
 			<div
-				className={` rounded-full relative ${
+				className={` relative ${
 					show
-						? "bg-primary mt-2 text-primary-content border-primary-content border-[1px]"
-						: "bg-transparent mt-1 text-primary-content"
+						? "bg-primary mt-2 text-primary-content border-primary-content border-[1px] rounded-full "
+						: "bg-transparent mt-1 text-primary-content border-b-[1px] border-primary-content border-opacity-40 "
 				} items-center w-full flex justify-between transition-all duration-500 md:px-5 px-2 py-1`}
 			>
 				<div className="flex gap-2 items-center ml-5">

@@ -37,7 +37,7 @@ export const navMenuData: MenuItem[] = [
 	{
 		id: 1,
 		name: "Work",
-		url: "/work",
+		url: "work",
 	},
 	{
 		id: 1,
@@ -49,6 +49,11 @@ export const navMenuData: MenuItem[] = [
 		name: "Visit",
 		url: "visit",
 	},
+	{
+		id: 1,
+		name: "express entry",
+		url: "express-entry",
+	},
 ];
 
 const Menu = () => {
@@ -58,9 +63,12 @@ const Menu = () => {
 				{navMenuData.map((item, index) => {
 					return (
 						<div key={index} className="du-dropdown du-dropdown-hover ">
-							<div className="uppercase font-light bg-transparent mx-1  hover:cursor-pointer hover:scale-105 hover:text-white transition-all duration-200">
+							<Link
+								href={item?.url || "/"}
+								className="uppercase font-light bg-transparent mx-1  hover:cursor-pointer hover:scale-105 hover:text-white transition-all duration-200 du-link-hover"
+							>
 								{item.name}
-							</div>
+							</Link>
 							{item.subMenu && (
 								<ul
 									tabIndex={0}
@@ -92,7 +100,8 @@ const ListItem = React.forwardRef<
 	return (
 		<li>
 			<NavigationMenuLink asChild>
-				<a
+				<Link
+					href={props.href || "/"}
 					ref={ref}
 					className={cn(
 						"block select-none du-bordered space-y-1 rounded-md items-center leading-none no-underline outline-none transition-colors hover:glass hover:text-accent-foreground focus:bg-primary focus:text-accent-foreground",
@@ -104,7 +113,7 @@ const ListItem = React.forwardRef<
 					<p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
 						{children}
 					</p>
-				</a>
+				</Link>
 			</NavigationMenuLink>
 		</li>
 	);
