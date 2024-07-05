@@ -33,12 +33,6 @@ export const navMenuData: MenuItem[] = [
 		name: "About US",
 		url: "about-us",
 	},
-
-	{
-		id: 1,
-		name: "Work",
-		url: "work",
-	},
 	{
 		id: 1,
 		name: "Study",
@@ -46,8 +40,8 @@ export const navMenuData: MenuItem[] = [
 	},
 	{
 		id: 1,
-		name: "Visit",
-		url: "visit",
+		name: "Contact Us",
+		url: "contact",
 	},
 	{
 		id: 1,

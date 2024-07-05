@@ -22,6 +22,7 @@ entering Canada.`,
 		height: 600,
 		width: 600,
 		src: "/images/express-entry.png",
+		stretch: true,
 	},
 };
 

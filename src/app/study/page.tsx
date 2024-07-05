@@ -12,10 +12,10 @@ import { StaticStudyCards } from "./staticStudyCards";
 type Props = {};
 
 const topCardStatics: BasicTemplateTopCardProps = {
-	title: "Study",
-	description: `Studying at a university in Canada will improve your chances of finding your dream job.
-     Canadian post-secondary education is known for its high quality and excellent academic
-     standards. Discover why Canada is one of the most popular destinations for international students`,
+	title: "University in Canada:",
+	description: `Canada is renowned globally for its stellar post-secondary institutions, and excellent academic
+standards. Discover why studying at a university in Canada is a great way to kick-start a
+successful professional career and get your dream job.`,
 	button1: {
 		title: "Free Assesment",
 		action: async () => {
@@ -32,12 +32,16 @@ const topCardStatics: BasicTemplateTopCardProps = {
 		src: "/images/study.png",
 		width: 1000,
 		height: 500,
+		stretch: true,
 	},
 };
 
 const homeCardStatics: HomeCardProps = {
 	title: "University in Canada",
-	description: `Universities in Canada offer more than 15,000 undergradu­ate and graduate degree programs and professional degree programs, diplomas, and certificates – in a broad range of disciplines. In addition, Canadian universities offer many programs that provide students with hands-on experiences, including co-op training and internships`,
+	description: `Canadian universities offer a wide variety of undergraduate programs. There are over 15,000
+undergraduate and professional degrees, programs, diplomas and certificates, in diverse
+disciplines. You can also enrich your education by taking specialized programs that provide
+students with hands-on experiences, including internships and co-op.`,
 	image: "/images/universityCard.png",
 	link: { title: "free assesments", url: "/assessment-form" },
 	subText: "Take this FREE assessment to see your eligibility status!",
@@ -95,6 +99,15 @@ const UniversityCollapsibleCard = () => {
 	return (
 		<div className="w-full flex flex-col gap-5 text-left">
 			<div className="w-full">
+				<ul className="list list-outside">
+					<li className="opacity-90">{`Canada has an exceptional reputation in education, with many Canadian universities
+ranking top in the world.`}</li>
+					<li className="opacity-90">{`There is an incredible range of study disciplines- there are over 96 public education
+institutions and over 15,000 programs of study.`}</li>
+					<li className="opacity-90">{`Canadian universities are affordable, with an average undergraduate program costing
+around 33,000 CAD.`}</li>
+					<li className="opacity-90">{`Canada is one of the most welcoming countries for international students.`}</li>
+				</ul>
 				<h2 className="lg:text-2xl md:text-xl text-lg font-bold tracking-tighter">
 					Programs and Area of Study
 				</h2>
@@ -127,9 +140,9 @@ const CollapsibleCard2 = () => {
 					Who Needs a Study Permit
 				</h2>
 				<p>
-					As a non-Canadian who lives abroad (note: this does not apply to
-					someone with a current Permanent Resident PR status), you will require
-					a study permit to study in Canada unless exempted.
+					Any non-Canadian student who is living abroad requires a study permit
+					to complete education in Canada, unless otherwise exempted by the
+					government.
 				</p>
 			</div>
 
@@ -138,35 +151,38 @@ const CollapsibleCard2 = () => {
 					Designated Learning Institutions
 				</h2>
 				<p>
-					As an international student, you will require an institution that can
-					host you. What makes a school qualified is having been approved as a
-					Designated Learning Institution (DLI) by a provincial or territorial
-					government.
+					International students require institutions that are able to host you.
+					These are qualified as a Designated Learning Institution (DLI) by the
+					provincial or federal government.
 				</p>
 			</div>
 			<div className="w-full">
 				<h2 className="lg:text-2xl md:text-xl text-lg font-bold tracking-tighter">
-					Period of Study Permit
+					Period of Study Permits
 				</h2>
-				<ul className="list-disc list-inside">
-					<li className="list-item">{`A study permit is usually valid for the length of your study program, plus an extra 90 days. The 90 days lets you prepare to leave Canada or apply to extend your stay.`}</li>
-					<li className="list-item">{`A study permit is usually valid for the length of your study program, plus an extra 90 days. The 90 days lets you prepare to leave Canada or apply to extend your stay.`}</li>
-				</ul>
+				<p>
+					A study permit is usually valid for the entire length of your study
+					program, and an additional 90 days. These 90 days are given to help
+					you prepare to leave Canada, or apply to extend your stay. Proof of
+					your program’s end date can be verified through a completion letter,
+					transcript, degree or diploma issued by your institution.
+				</p>
 			</div>
 		</div>
 	);
 };
 
 const UniversityCollapsibleCardProps = {
-	title: "Univerity In Canada",
-	subHeading:
-		"Canada is one of the most popular destinations for international students. Canadian degrees are highly recognized worldwide and can help you to find your dream job",
+	title: "Why Choose University in Canada?",
+	subHeading: `Canada has an exceptional reputation in education, with many Canadian universities
+ranking top in the world.`,
 	body: <UniversityCollapsibleCard />,
 };
 
 const CollapsibleCard2Props = {
 	title: "Levels Of Study",
-	subHeading:
-		"When studying in Canada, you may start by earning a diploma or a degree and make your way up to the next levels of post-graduate programs – A masters or Ph.D.",
+	subHeading: `When studying in Canada, you may begin by earning a diploma or undergraduate degree. The
+next tier of education would be post graduate- these programs include masters, PhD’s, or
+specialized graduate programs like medical school or law school.`,
 	body: <CollapsibleCard2 />,
 };

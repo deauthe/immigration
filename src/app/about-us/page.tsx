@@ -24,6 +24,7 @@ const topCardStatics: BasicTemplateTopCardProps = {
 		height: 600,
 		width: 600,
 		src: "/about-us.png",
+		stretch: true,
 	},
 };
 

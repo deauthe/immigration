@@ -14,7 +14,7 @@ Ask BMOR Immigration Inc., with a focus on communication and clarity, stands tal
 export default function AboutUsCard(props: Props) {
 	return (
 		<div className=" w-full md:grid grid-cols-4 lg:gap-10 justify-center">
-			<div className="col-span-3 du-card w-auto bg-base-100 shadow-xl rounded-none  max-h-96 text-black md:w-full mx-4 items-center md:mx-0 relative">
+			<div className="col-span-3 du-card w-auto bg-base-100 shadow-xl rounded-none  max-h-72 text-black md:w-full mx-4 items-center md:mx-0 relative">
 				<div className="absolute right-0 top-0 h-full w-2 bg-primary hidden md:block"></div>
 				<div className="du-card-body md:text-left text-center">
 					<h2 className="du-card-title md:text-left text-center items-center mx-auto">

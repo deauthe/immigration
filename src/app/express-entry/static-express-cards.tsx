@@ -14,52 +14,36 @@ export function StaticExpressCards() {
 
 const staticExpressCardProps: CarouselCardProps[] = [
 	{
-		title: "University in Canada",
+		title: "Canadian Experience Class:",
 		subheading: "University of British Columbia",
 		overflowImageUrl: "/images/carouselCard/card1.png",
 		body: (
-			<div className="w-full flex flex-col gap-3 text-primary-content">
-				<ul className="list-disc list-inside">
-					<li>{`
-• Depending on your profile and needs, you can choose to study in English or French.• Canadian universities are affordable.`}</li>
-					<li>{` An average undergraduate program is around CAD 33.000.`}</li>
-					<li>{`Based on their needs and budget, international students often choose cities like Montreal, Vancouver or Toronto.`}</li>
-					<li>{` Global leader at innovation`}</li>
-					<li>{` Universities with opportunities for everyone`}</li>
-					<li>{` Cost of university in Canada`}</li>
-				</ul>
+			<div className="w-full flex flex-col gap-3 text-black">
+				This program has been created for skilled workers that have canadian
+				work experience within the past 3 years.
 			</div>
 		),
 	},
 	{
-		title: "Global leader at innovation",
+		title: "Federal Skilled Worker Program:n",
 		subheading: "University of British Columbia",
 		overflowImageUrl: "/images/carouselCard/card2.png",
 		body: (
-			<div className="w-full flex flex-col gap-3 text-primary-content">
-				<ul className="list-disc list-inside">
-					<li>{`
-Interested in research? So are we! Our universities conduct research at one of the world’s highest rates. Canada’s thriving research culture exceeds the G7 average in terms of impact in the fields of clinical medicine; biology; information and communication technologies; agriculture; fisheries and forestry; earth.
-`}</li>
-					<li>{` An average undergraduate program is around CAD 33.000.• Based on their needs and budget, international students often choose cities like Montreal, Vancouver or Toronto.`}</li>
-					<li>{`•  Global leader at innovation`}</li>
-				</ul>
+			<div className="w-full flex flex-col gap-3 text-black">
+				This program is ideal for those with any work experience, whether
+				Canadian or foreign.
 			</div>
 		),
 	},
 	{
-		title: "Global leader at innovation",
+		title: "Federal Skilled Trades Program:",
 		subheading: "University of British Columbia",
 		overflowImageUrl: "/images/carouselCard/card2.png",
 		body: (
-			<div className="w-full flex flex-col gap-3 text-primary-content text-left">
-				<ul className="list-disc list-inside">
-					<li>{`
-Interested in research? So are we! Our universities conduct research at one of the world’s highest rates. Canada’s thriving research culture exceeds the G7 average in terms of impact in the fields of clinical medicine; biology; information and communication technologies; agriculture; fisheries and forestry; earth.
-`}</li>
-					<li>{` An average undergraduate program is around CAD 33.000.• Based on their needs and budget, international students often choose cities like Montreal, Vancouver or Toronto.`}</li>
-					<li>{`•  Global leader at innovation`}</li>
-				</ul>
+			<div className="w-full flex flex-col gap-3 text-black text-left">
+				This program is for skilled workers who have obtained a qualification
+				for a skilled trade- job offer or certificate of qualification is
+				required.
 			</div>
 		),
 	},
