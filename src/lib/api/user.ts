@@ -12,7 +12,7 @@ export async function createUserAssesment(
 	console.log("I got called");
 
 	//finding userId associated with email
-	const user = await getUser({ email });
+	const user = await getUserIncludingAssesment({ email });
 	if (!user) {
 		throw new Error("User not found");
 	} else {
@@ -51,7 +51,7 @@ export async function createUserAssesment(
 	}
 }
 
-export async function getUser({ email }: { email: string }) {
+export async function getUserIncludingAssesment({ email }: { email: string }) {
 	try {
 		const user = await prisma.user.findUnique({
 			where: {

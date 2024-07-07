@@ -25,7 +25,7 @@ const statics: HomeCardProps = {
 
 export default function Home() {
 	return (
-		<main className="flex flex-col bg-transparent">
+		<main className="flex flex-col bg-transparent bg-dot-primary/70">
 			<div className="">
 				{/* <Hero /> */}
 				<Hero2 />
@@ -46,8 +46,7 @@ export default function Home() {
 					<ContactUs />
 				</div>
 			</div> */}
-			<div className="relative bg-base-100 lg:pb-10 pb-5">
-				<WorldMapBackground />
+			<div className="relative lg:pb-10 pb-5 ">
 				{/* <div className="z-10 mb-10">
 					<WhyUs />
 				</div> */}

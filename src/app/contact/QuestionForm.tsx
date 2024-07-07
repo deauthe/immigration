@@ -50,12 +50,12 @@ const QuestionFormContent = () => {
 		if (parseSuccess.success) {
 			try {
 				axios
-					.post("/api/user-assessment", data)
+					.post("/api/question", data)
 					.then((res) => {
 						console.log("response", res.data);
 						toast({
 							title: "Success",
-							description: `your response has been submitted ${res.data?.firstName}`,
+							description: `your response has been submitted ${res.data?.name}`,
 
 							duration: 5000,
 						});

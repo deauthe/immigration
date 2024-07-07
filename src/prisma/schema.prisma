@@ -16,6 +16,7 @@ model User {
   image           String?
   password        String?
   userAssesment   UserAssesment?
+  questions       Question[]
   accounts      Account[]
   @@map("users")
 }
@@ -67,6 +68,18 @@ model Account {
   @@map("accounts")
 }
 
+model Question {
+  id             String  @id @default(cuid())
+  phone          String
+  email          String
+  question       String
+  user           User  @relation(fields: [userId],references: [id])
+  userId         String  @unique
+  isOpen         Boolean? @default(true)
+  name           String
+
+
+}
 
 
 enum EducationLevel{
