@@ -49,7 +49,7 @@ students with hands-on experiences, including internships and co-op.`,
 
 const Study = (props: Props) => {
 	return (
-		<BasicTemplate worldMapBackground className="">
+		<BasicTemplate worldMapBackground={false} className="">
 			<BasicTemplateTopCard
 				title={topCardStatics.title}
 				description={topCardStatics.description}

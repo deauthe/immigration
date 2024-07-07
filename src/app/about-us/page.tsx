@@ -42,12 +42,12 @@ function AboutUs() {
 				image={topCardStatics.image}
 			/>
 
-			<div className="relative z-10 lg:mt-10 md:mt-5 w-full">
+			<div className="relative -translate-y-2 md:translate-y-0 z-10 lg:mt-10 md:mt-5 w-full">
 				<AboutUsCard2 />
 			</div>
 
 			{/* pillars/ key points  */}
-			<div className="z-10 w-full mt-10 flex flex-col gap-10">
+			<div className="z-10 w-full mt-10 flex flex-col md:gap-10 gap-0">
 				{/* heading  */}
 				<PageBreak label="Pillars of bmor" />
 

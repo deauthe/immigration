@@ -28,7 +28,7 @@ entering Canada.`,
 
 function ExpressEntry() {
 	return (
-		<BasicTemplate worldMapBackground={true} className="">
+		<BasicTemplate worldMapBackground={false} className="">
 			<BasicTemplateTopCard
 				title={topCardStatics.title}
 				description={topCardStatics.description}

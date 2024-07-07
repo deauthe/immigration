@@ -44,8 +44,8 @@ export default function AboutUsCard(props: Props) {
 export const AboutUsCard2 = () => {
 	return (
 		<WobbleCard
-			containerClassName="lg:max-w-6xl max-w-4xl bg-gradient-to-t from-white to-primary w-full rounded-none md:rounded-full"
-			className="max-w-6xl"
+			containerClassName="lg:max-w-6xl max-w-4xl bg-transparent bg-primary w-full rounded-none md:rounded-full shadow-none "
+			className="max-w-6xl md:bg-dot-primary rounded-none"
 		>
 			<div className="max-w-2xl text-center mx-auto ">
 				<h2 className=" text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black">
