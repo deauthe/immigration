@@ -66,6 +66,13 @@ const AssesmentFormContent = () => {
 					})
 					.catch((err) => {
 						console.error(err);
+						toast({
+							title: "error",
+							description: `error submitting response`,
+
+							duration: 5000,
+						});
+						router.push("/");
 					})
 					.finally(() => {
 						setIsloading(false);
