@@ -1,6 +1,4 @@
-import CarouselCard, {
-	CarouselCardProps,
-} from "@/components/Cards/CarouselCard";
+import { CarouselCardProps } from "@/components/Cards/CarouselCard";
 import { HoverEffect } from "@/components/Cards/HoverCard";
 
 export function StaticStudyCards() {
@@ -35,9 +33,7 @@ const staticStudyCardProps: CarouselCardProps[] = [
 		body: (
 			<div className="w-full flex flex-col gap-3 text-black">
 				<ul className="list-disc list-inside">
-					<li>{`
-Interested in research? So are we! Our universities conduct research at one of the world’s highest rates. Canada’s thriving research culture exceeds the G7 average in terms of impact in the fields of clinical medicine; biology; information and communication technologies; agriculture; fisheries and forestry; earth.
-`}</li>
+					<li>{`Interested in research? So are we! Our universities conduct research at one of the world’s highest rates. Canada’s thriving research culture exceeds the G7 average in terms of impact in the fields of clinical medicine; biology; information and communication technologies; agriculture; fisheries and forestry; earth.`}</li>
 					<li>{` An average undergraduate program is around CAD 33.000. Based on their needs and budget, international students often choose cities like Montreal, Vancouver or Toronto.`}</li>
 					<li>{` Global leader at innovation`}</li>
 				</ul>

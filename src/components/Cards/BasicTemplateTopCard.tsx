@@ -81,7 +81,11 @@ const BasicTemplateTopCard = ({
 				</div>
 				<div className="relative  md:max-h-96   w-full mx-auto  min-h-80">
 					{/*@ts-ignore*/}
-					<Image {...imageProps} alt="" className=" lg:max-w-[600px] mx-auto" />
+					<Image
+						{...imageProps}
+						alt=""
+						className=" lg:max-w-[600px] mx-auto rounded-none"
+					/>
 				</div>
 			</div>
 		</div>

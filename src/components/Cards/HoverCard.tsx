@@ -4,14 +4,22 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 
+export interface HoverEffectCardProps {
+	//for one item
+	title: string | React.ReactNode;
+	subheading?: string | React.ReactNode;
+	overflowImageUrl?: string;
+	body?: React.ReactNode;
+}
+
 export const HoverEffect = ({
 	items,
 	className,
 }: {
 	items: {
-		title: string;
-		subheading?: string;
-		overflowImageUrl: string;
+		title: string | React.ReactNode;
+		subheading?: string | React.ReactNode;
+		overflowImageUrl?: string;
 		body?: React.ReactNode;
 	}[];
 	className?: string;
@@ -27,7 +35,7 @@ export const HoverEffect = ({
 		>
 			{items.map((item, idx) => (
 				<div
-					key={item?.title}
+					key={idx}
 					className="relative group  block p-2 h-full w-full lg:text-3xl md:text-2xl text-xl"
 					onMouseEnter={() => setHoveredIndex(idx)}
 					onMouseLeave={() => setHoveredIndex(null)}
@@ -51,6 +59,7 @@ export const HoverEffect = ({
 					</AnimatePresence>
 					<Card>
 						<CardTitle>{item.title}</CardTitle>
+						<CardTitle>{item.subheading}</CardTitle>
 						<CardDescription>{item.body}</CardDescription>
 					</Card>
 				</div>

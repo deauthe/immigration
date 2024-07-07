@@ -148,7 +148,7 @@ const QuestionFormContent = () => {
 				</Label>
 				<input
 					disabled={isLoading}
-					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent"
+					className="du-input du-input-bordered du-input-primary w-full  px-2 bg-transparent "
 					id="lastName"
 					type="text"
 					{...register("name", { required: "Last name is required" })}
@@ -167,10 +167,9 @@ const QuestionFormContent = () => {
 				>
 					Question
 				</Label>
-				<input
+				<textarea
 					className="du-textarea-lg du-textarea shrink-0 text-wrap du-textarea-primary bg-transparent h-36 w-full justify-start p-0"
 					id="comment"
-					type="text"
 					{...register("question")}
 				/>
 				{errors.question && (

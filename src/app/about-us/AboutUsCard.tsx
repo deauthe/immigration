@@ -1,3 +1,4 @@
+import { WobbleCard } from "@/components/ui/wobble-card";
 import Image from "next/image";
 import React from "react";
 
@@ -16,11 +17,13 @@ export default function AboutUsCard(props: Props) {
 		<div className=" w-full md:grid grid-cols-4 lg:gap-10 justify-center">
 			<div className="col-span-3 du-card w-auto bg-base-100 shadow-xl rounded-none  max-h-72 text-black md:w-full mx-4 items-center md:mx-0 relative">
 				<div className="absolute right-0 top-0 h-full w-2 bg-primary hidden md:block"></div>
-				<div className="du-card-body md:text-left text-center">
-					<h2 className="du-card-title md:text-left text-center items-center mx-auto">
+				<div className="du-card-body md:text-left text-center flex flex-col justify-between">
+					<h2 className="du-card-title md:text-left text-center items-center mx-auto bg-black">
 						{statics.title}
 					</h2>
-					<p>{statics.description}</p>
+					<p className="lg:w-1/2 text-center mx-auto bg-primary">
+						{statics.description}
+					</p>
 				</div>
 			</div>
 
@@ -37,3 +40,33 @@ export default function AboutUsCard(props: Props) {
 		</div>
 	);
 }
+
+export const AboutUsCard2 = () => {
+	return (
+		<WobbleCard
+			containerClassName="lg:max-w-6xl max-w-4xl bg-gradient-to-t from-white to-primary w-full rounded-none md:rounded-full"
+			className="max-w-6xl"
+		>
+			<div className="max-w-2xl text-center mx-auto ">
+				<h2 className=" text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black">
+					Why us?
+				</h2>
+				<p className="mt-4  text-base/6 text-neutral">
+					Here at BMOR immigration, we understand what a big decision coming to
+					Canada is. That’s why we will be there to support you every step of
+					the way. Our consultants give personalized advice to each customer,
+					creating a bond that goes beyond one of a client. We are devoted to
+					our company, and operate on the following values: Reliability,
+					Humanism, Ethics and Responsibility.
+				</p>
+			</div>
+			<Image
+				src="/ceo.webp"
+				width={500}
+				height={500}
+				alt="linear demo image"
+				className="hidden md:absolute md:top-0  md:-right-[20%] lg:right-0"
+			/>
+		</WobbleCard>
+	);
+};
