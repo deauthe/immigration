@@ -4,14 +4,8 @@ import Link from "next/link";
 import { BsChevronDown } from "react-icons/bs";
 import {
 	NavigationMenu,
-	NavigationMenuContent,
-	NavigationMenuIndicator,
-	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
-	NavigationMenuTrigger,
-	navigationMenuTriggerStyle,
-	NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
@@ -47,6 +41,11 @@ export const navMenuData: MenuItem[] = [
 		id: 1,
 		name: "express entry",
 		url: "express-entry",
+	},
+	{
+		id: 1,
+		name: "work",
+		url: "work",
 	},
 ];
 

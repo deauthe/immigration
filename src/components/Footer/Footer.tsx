@@ -1,8 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
-import Wrapper from "../mainComponents/Wrapper";
-import { footerNavLinks } from "../Faq/FaqStaticItems";
 
 const Footer = () => {
 	return (
@@ -66,3 +63,24 @@ const Footer = () => {
 };
 
 export default Footer;
+
+interface NavLinkType {
+	name: string;
+	href: string;
+}
+export const navBarNavLinks: NavLinkType[] = [
+	{ name: "Home", href: "/" },
+	{ name: "About", href: "/about-us" },
+	{ name: "study", href: "/study" },
+];
+export const footerNavLinks: NavLinkType[] = [
+	{ name: "Home", href: "/" },
+	{ name: "About", href: "/about-us" },
+	{ name: "Contact Us", href: "/contact" },
+	{ name: "study", href: "/study" },
+	{ name: "express entry", href: "/express-entry" },
+	{ name: "work", href: "/work" },
+	{ name: "faq", href: "/#faq" },
+	{ name: "privacy policy", href: "/privacy-policy" },
+	{ name: "terms and conditions", href: "/terms-and-conditions" },
+];
