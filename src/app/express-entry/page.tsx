@@ -38,8 +38,8 @@ function ExpressEntry() {
 			{/* pillars/ key points  */}
 			<div className="z-10 w-full lg:mt-10 mt-5 flex flex-col lg:gap-10 gap-2">
 				{/* heading  */}
-				<Wrapper className="overflow-visible w-full text-center 	 rounded-t-xl">
-					<div className="lg:text-6xl text-4xl font-extrabold  my-2 tracking-tight text-black md:text-primary-content">
+				<Wrapper className="overflow-visible w-full text-center 	 rounded-t-xl rounded-badge bg-white md:bg-transparent">
+					<div className="lg:text-6xl text-4xl font-extrabold  my-2 tracking-tight text-black md:text-primary-content ">
 						Express Entry Programs
 					</div>
 					<div className="lg:text-lg md:text-md text-sm font-light tracking-tight text-black md:text-primary-content">

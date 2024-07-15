@@ -14,8 +14,8 @@ export function StaticExpressCards() {
 
 const staticExpressCardProps: CarouselCardProps[] = [
 	{
-		title: "Canadian Experience Class:",
-		subheading: "University of British Columbia",
+		title: "Canadian Experience Class",
+
 		overflowImageUrl: "/images/carouselCard/card1.png",
 		body: (
 			<div className="w-full flex flex-col gap-3 text-black">
@@ -25,8 +25,8 @@ const staticExpressCardProps: CarouselCardProps[] = [
 		),
 	},
 	{
-		title: "Federal Skilled Worker Program:n",
-		subheading: "University of British Columbia",
+		title: "Federal Skilled Worker Program",
+
 		overflowImageUrl: "/images/carouselCard/card2.png",
 		body: (
 			<div className="w-full flex flex-col gap-3 text-black">
@@ -36,8 +36,7 @@ const staticExpressCardProps: CarouselCardProps[] = [
 		),
 	},
 	{
-		title: "Federal Skilled Trades Program:",
-		subheading: "University of British Columbia",
+		title: "Federal Skilled Trades Program",
 		overflowImageUrl: "/images/carouselCard/card2.png",
 		body: (
 			<div className="w-full flex flex-col gap-3 text-black text-left">

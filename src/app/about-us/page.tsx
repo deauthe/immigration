@@ -21,10 +21,9 @@ import { StaticPillarCards } from "./staticCards";
 
 const topCardStatics: BasicTemplateTopCardProps = {
 	title: "About Us",
-	description: `A Regulated Canadian Immigration Consultant (RCIC) licensed under the Immigration Consultants of Canada Regulatory Council (ICCRC) with 
-					license number R706180, he is also a member of The Canadian Association of Professional Immigration Consultants (CAPIC) member ID R21006.
-                    He is the driving force and the face of Ask Kubeir. An ardent believer who is Forever Hopeful, his commitment, passion and transparency 
-					towards his work is what his clients and audience seek. Certification of Recognition`,
+	description: `BMOR Immigration is a professional consultancy service that prides itself on reliable, accurate
+guidance for immigration-related queries. Our consultants are committed to creating long-lasting
+relationships with our clients, through one-on-one consultations and personalized applications.`,
 	image: {
 		height: 600,
 		width: 600,

@@ -9,18 +9,21 @@ const staticCards: CardProps[] = [
 		description:
 			"Canada has over 150 immigration programs available for foreign nationals who wish to immigrate to Canada and become permanent residents. Whether you're a skilled worker, entrepreneur, investor, or coming with your family, there’s a program for you. At BMOR immigration, we will assess your skills and eligibility to find the perfect program for you.",
 		image: "/images/card1.jpeg",
+		href: "express-entry",
 	},
 	{
 		title: "Business Immigration",
 		description:
 			"Are you a Business owner who wants to live in Canada? Business owners who wish to relocate to Canada may apply for a business visa under one of the business immigration programs. There are many opportunities for foreign investors to grow their business while fast-tracking their immigration process to becoming a Canadian resident.",
 		image: "/images/card2.jpeg",
+		href: "/work",
 	},
 	{
 		title: "Work in Canada",
 		description:
 			"Canada welcomes millions of skilled immigrants each year to work in the Canadian economy while advancing their professional goals. There are plenty of work permits to apply to, based on your personal skills and status.",
 		image: "/images/card3.jpeg",
+		href: "/work",
 	},
 ];
 
@@ -36,6 +39,7 @@ function Features({}: Props) {
 						title={card.title}
 						description={card.description}
 						image={card.image}
+						href={card.href}
 					/>
 				);
 			})}
