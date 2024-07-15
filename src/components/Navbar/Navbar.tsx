@@ -21,8 +21,11 @@ const Navbar = () => {
 	};
 
 	useEffect(() => {
-		window.addEventListener("scroll", controlNavbar);
-		controlNavbar();
+		if (pathName.includes("/dashboard")) {
+			setShow(true);
+		} else {
+			window.addEventListener("scroll", controlNavbar);
+		}
 
 		return () => {
 			window.removeEventListener("scroll", controlNavbar);

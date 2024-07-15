@@ -66,7 +66,7 @@ const WorkPage = (props: Props) => {
 			</div>
 			<div className="relative">
 				<Wrapper className="">
-					<StaticWorkCards />
+					<StaticWorkCards/>
 				</Wrapper>
 			</div>
 		</div>

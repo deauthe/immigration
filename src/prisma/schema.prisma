@@ -11,17 +11,21 @@ model User {
   id              String           @id @default(uuid())
   createdAt       DateTime         @default(now()) @db.Timestamp(6)
   emailVerified DateTime? @map("email_verified")
-  email           String?           @db.VarChar(255) @unique
+  email           String           @db.VarChar(255) @unique
   name            String?
   image           String?
   password        String?
+  role            Role? @default(USER)
   userAssesment   UserAssesment?
   questions       Question[]
   accounts      Account[]
   @@map("users")
 }
 
-
+enum Role{
+  USER
+   ADMIN
+}
 
 model UserAssesment {
   id             String     @id @default(uuid())
