@@ -1,4 +1,4 @@
-import { getUserAssesment } from "@/lib/actions/users";
+import { getAssesment } from "@/lib/actions/users";
 import {
 	FlagIcon,
 	MailCheckIcon,
@@ -17,7 +17,7 @@ async function UserAssesmentDisplayPage({
 	params: { id: string };
 }) {
 	const assesmentId = params.id;
-	const assesment = await getUserAssesment({ id: assesmentId });
+	const assesment = await getAssesment({ id: assesmentId });
 	if (!assesment) return <div>Assesment not found</div>;
 	return (
 		<div className="flex flex-col gap-5 mt-20">
