@@ -7,7 +7,7 @@ const onSubmit = () => {};
 
 export default function AssesmentPage() {
 	return (
-		<BasicTemplate className="" worldMapBackground={true}>
+		<BasicTemplate className="" worldMapBackground={false}>
 			<div className="w-full text-center md:gap-10 gap-5  flex flex-col z-10 px-5 md:px-0">
 				<div className="lg:text-4xl md:text-3xl text-2xl font-extrabold  tracking-tighter w-fit mx-auto uppercase text-white text-center">
 					Immigration assessment form
