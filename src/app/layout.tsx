@@ -22,9 +22,12 @@ export default function RootLayout({
 		<Providers>
 			<html data-theme="mytheme" lang="en">
 				<body className={`${inter.className} `}>
-					<Navbar />
+					{/* <Navbar />
 					{children}
-					<Footer />
+					<Footer /> */}
+					<div className="w-full h-screen bg-black text-white flex justify-center items-center">
+						Website in the making
+					</div>
 					<Toaster />
 				</body>
 			</html>
