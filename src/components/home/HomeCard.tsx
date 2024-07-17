@@ -27,7 +27,7 @@ export default function HomeCard({
 				<img src={image} alt="Movie" className="object-contain  w-full" />
 			</figure>
 			<div className="du-card-body md:text-left text-center">
-				<h2 className="du-card-title md:text-left text-center text-lg lg:text-2xl md:text-xl uppercase font-bold">
+				<h2 className="du-card-title md:text-left text-center text-lg lg:text-2xl md:text-xl uppercase font-bold mx-auto md:mx-0">
 					{title}
 				</h2>
 				<span className="lg:text-lg md:text-base text-sm">{description}</span>

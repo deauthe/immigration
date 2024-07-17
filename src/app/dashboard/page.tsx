@@ -1,7 +1,7 @@
-import React from "react";
-
+"use server ";
+import { redirect } from "next/navigation";
 function DashboardPage() {
-	return <div>DashboardPage</div>;
+	redirect("/dashboard/users");
 }
 
 export default DashboardPage;

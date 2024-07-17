@@ -31,21 +31,53 @@ export const navMenuData: MenuItem[] = [
 		id: 1,
 		name: "Study",
 		url: "study",
+		subMenu: [
+			{ id: 1, name: "college", url: "/assesment-form" },
+			{ id: 1, name: "school", url: "/assesment-form" },
+			{ id: 1, name: "Universities", url: "/assesment-form" },
+		],
 	},
+
 	{
 		id: 1,
-		name: "Contact Us",
-		url: "contact",
-	},
-	{
-		id: 1,
-		name: "express entry",
+		name: "Immigrate",
 		url: "express-entry",
+		subMenu: [
+			{ id: 1, name: "Express Entry", url: "/assesment-form" },
+			{ id: 1, name: "Family Sponsorship", url: "/assesment-form" },
+			{ id: 1, name: "Atlantic Immigration Program", url: "/assesment-form" },
+			{ id: 1, name: "Caregivers", url: "/assesment-form" },
+			{ id: 1, name: "Self Employed", url: "/assesment-form" },
+			{
+				id: 1,
+				name: "Rural and Northern Immigration Pilot",
+				url: "/assesment-form",
+			},
+		],
 	},
 	{
 		id: 1,
 		name: "work",
 		url: "work",
+		subMenu: [
+			{ id: 1, name: "closed Work Permit", url: "/assesment-form" },
+			{ id: 1, name: "Open Work Permit", url: "/assesment-form" },
+		],
+	},
+	{
+		id: 1,
+		name: "Visitor",
+		url: "/assesment-form",
+		subMenu: [
+			{ id: 1, name: "Visitor Visa", url: "/assesment-form" },
+			{ id: 1, name: "Super Visa", url: "/assesment-form" },
+		],
+	},
+
+	{
+		id: 1,
+		name: "Contact Us",
+		url: "contact",
 	},
 ];
 

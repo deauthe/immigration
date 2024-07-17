@@ -26,7 +26,7 @@ type User = {
 
 const UserTable = ({ users }: { users: User[] }) => {
 	return (
-		<Table className="text-black bg-white/80 rounded-box max-w-full overflow-x-auto">
+		<Table className="text-black bg-white/80 rounded-box max-w-full overflow-x-auto ">
 			<TableCaption>A list of your recent users.</TableCaption>
 			<TableHeader>
 				<TableRow>
@@ -51,7 +51,7 @@ const UserTable = ({ users }: { users: User[] }) => {
 							<TableCell className="text-center  items-center justify-center flex">
 								{user.questions?.length && user.questions?.length > 0 && (
 									<Link
-										href={`/dashboard/users/assesments/${assesmentId}`}
+										href={`/dashboard/users/questions/${user.id}`}
 										className=""
 									>
 										<LinkIcon />
@@ -59,9 +59,9 @@ const UserTable = ({ users }: { users: User[] }) => {
 								)}
 							</TableCell>
 							<TableCell className="text-center">
-								{assesmentId && (
+								{user.id && (
 									<Link
-										href={`/dashboard/assesments/${assesmentId}`}
+										href={`/dashboard/users/assesments/${assesmentId}`}
 										className="mx-auto "
 									>
 										<LinkIcon />
