@@ -4,6 +4,7 @@ import { FaqItems } from "./FaqStaticItems";
 const FaqSection = () => {
 	return (
 		<div
+			id="faq"
 			className="du-hero h-fit b w-full flex flex-col py-5 rounded-none "
 			style={{ backgroundImage: "url(/toronto.jpg)" }}
 		>
