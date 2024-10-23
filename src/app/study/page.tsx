@@ -30,9 +30,8 @@ successful professional career and get your dream job.`,
 	},
 	image: {
 		src: "/images/study.png",
-		width: 1000,
-		height: 500,
-		stretch: true,
+		width: 300,
+		height: 300,
 	},
 };
 
@@ -58,7 +57,7 @@ const Study = (props: Props) => {
 				image={topCardStatics.image}
 			/>
 
-			<div className="relative">
+			<div className="relative my-5">
 				<Wrapper className="relative z-10 max-h-96 ">
 					<HomeCard
 						description={homeCardStatics.description}
