@@ -94,7 +94,7 @@ const Menu = () => {
 							>
 								{item.name}
 							</Link>
-							{item.subMenu && (
+							{/* {item.subMenu && (
 								<ul
 									tabIndex={0}
 									className="du-dropdown-content z-[1] du-menu du-card-bordered p-2 shadow bg-primary/90  uppercase rounded-box w-52 "
@@ -109,7 +109,7 @@ const Menu = () => {
 										);
 									})}
 								</ul>
-							)}
+							)} */}
 						</div>
 					);
 				})}

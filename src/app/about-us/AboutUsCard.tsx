@@ -51,7 +51,7 @@ export const AboutUsCard2 = () => {
 				<h2 className=" text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em]  ">
 					Why us?
 				</h2>
-				<p className="mt-4 text-base/6  mx-auto font-sentient text-lg">
+				<p className="mt-4 text-base/6  mx-auto font-sentient text-">
 					Here at BMOR immigration, we understand what a big decision coming to
 					Canada is. That’s why we will be there to support you every step of
 					the way. Our consultants give personalized advice to each customer,

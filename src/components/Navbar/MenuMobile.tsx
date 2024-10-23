@@ -48,16 +48,21 @@ const MenuMobile = (props: Props) => {
 					{navMenuData.map((item, index) =>
 						item?.subMenu ? (
 							<li key={index}>
-								<details>
-									<summary>{item.name}</summary>
-									<ul>
+								{/* <details> */}
+								<Link
+									href={item.url as string}
+									className="du-link du-link-hover"
+								>
+									{item.name}
+								</Link>
+								{/* <ul>
 										{item.subMenu.map((sublink, subIndex) => (
 											<li key={subIndex}>
 												<Link href={sublink.url as string}>{sublink.name}</Link>
 											</li>
 										))}
-									</ul>
-								</details>
+									</ul> */}
+								{/* </details> */}
 							</li>
 						) : (
 							<li key={index}>
