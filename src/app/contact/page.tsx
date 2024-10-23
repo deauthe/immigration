@@ -14,13 +14,6 @@ const topCardProps: BasicTemplateTopCardProps = {
 delighted in helping you find your path to success, and offer personalized advice through phone
 and email.`,
 	image: { src: "/images/contact.png", width: 420, height: 420 },
-	button2: {
-		title: "Contact Us",
-		action: async () => {
-			"use server";
-			return;
-		},
-	},
 };
 
 const ContactPage = (props: Props) => {

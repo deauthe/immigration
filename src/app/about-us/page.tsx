@@ -25,10 +25,9 @@ const topCardStatics: BasicTemplateTopCardProps = {
 guidance for immigration-related queries. Our consultants are committed to creating long-lasting
 relationships with our clients, through one-on-one consultations and personalized applications.`,
 	image: {
-		height: 600,
-		width: 600,
+		height: 400,
+		width: 400,
 		src: "/about-us.png",
-		stretch: true,
 	},
 };
 

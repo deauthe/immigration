@@ -19,10 +19,9 @@ const topCardStatics: BasicTemplateTopCardProps = {
 	description: `If you are a skilled worker, Express Entry is one of the easiest- and popular pathways for
 entering Canada.`,
 	image: {
-		height: 600,
-		width: 600,
+		height: 300,
+		width: 300,
 		src: "/images/express-entry.png",
-		stretch: true,
 	},
 };
 
@@ -38,7 +37,7 @@ function ExpressEntry() {
 			{/* pillars/ key points  */}
 			<div className="z-10 w-full lg:mt-10 mt-5 flex flex-col lg:gap-10 gap-2">
 				{/* heading  */}
-				<Wrapper className="overflow-visible w-full text-center 	 rounded-t-xl rounded-badge bg-white md:bg-transparent">
+				<Wrapper className="overflow-visible w-full text-center rounded-t-xl rounded-badge bg-white md:bg-transparent">
 					<div className="lg:text-6xl text-4xl font-extrabold  my-2 tracking-tight text-black md:text-primary-content ">
 						Express Entry Programs
 					</div>
@@ -49,7 +48,7 @@ function ExpressEntry() {
 					<StaticExpressCards />
 				</Wrapper>
 				<Wrapper className="overflow-visible w-full text-center ">
-					<div className="text-4xl md:text-5xl lg:text-6xl  font-extrabold  my-2 mb-5">
+					<div className="text-4xl md:text-5xl lg:text-6xl  font-extrabold  xl:mb-10 mb-5 xl:text-base-100">
 						How can you apply to Express Entry?
 					</div>
 

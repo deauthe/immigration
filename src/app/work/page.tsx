@@ -1,3 +1,4 @@
+"use client";
 import BasicTemplateTopCard, {
 	BasicTemplateTopCardProps,
 } from "@/components/Cards/BasicTemplateTopCard";
@@ -9,35 +10,9 @@ import React from "react";
 import { StaticWorkCards } from "./staticWorkCards";
 import Link from "next/link";
 import WorkCard, { WorkCardProps } from "./WorkCards";
+import { useRouter } from "next/navigation";
 
 type Props = {};
-
-const topCardStatics: BasicTemplateTopCardProps = {
-	title: "LMIA Work Permit",
-	description: `An LMIA, also known as a Labour Market Impact Assessment, is a document issued by the
-Government of Canada that states the impact a foreign worker would have entering the
-workforce.`,
-	button1: {
-		title: "Free Assesment",
-		action: async () => {
-			"use server";
-			redirect("/user-assessment");
-		},
-	},
-	button2: {
-		title: "Contact US",
-		action: async () => {
-			"use server";
-			redirect("/contact");
-		},
-	},
-	image: {
-		src: "/images/work.png",
-		width: 1000,
-		height: 500,
-		stretch: true,
-	},
-};
 
 const workCardStatics: WorkCardProps = {
 	title: "Work Permit",
@@ -54,6 +29,32 @@ certain documentation and justifications.`,
 };
 
 const WorkPage = (props: Props) => {
+	const router = useRouter();
+
+	const topCardStatics: BasicTemplateTopCardProps = {
+		title: "LMIA Work Permit",
+		description: `An LMIA, also known as a Labour Market Impact Assessment, is a document issued by the
+	Government of Canada that states the impact a foreign worker would have entering the
+	workforce.`,
+		button1: {
+			title: "Free Assessment",
+			action: async () => {
+				router.push("/assesment-form"); // Client-side navigation
+			},
+		},
+		button2: {
+			title: "Contact US",
+			action: async () => {
+				router.push("/contact"); // Client-side navigation
+			},
+		},
+		image: {
+			src: "/images/work.png",
+			width: 500,
+			height: 500,
+		},
+	};
+
 	return (
 		<div>
 			<BasicTemplate worldMapBackground={false} className="">
@@ -66,7 +67,7 @@ const WorkPage = (props: Props) => {
 			</div>
 			<div className="relative">
 				<Wrapper className="">
-					<StaticWorkCards/>
+					<StaticWorkCards />
 				</Wrapper>
 			</div>
 		</div>

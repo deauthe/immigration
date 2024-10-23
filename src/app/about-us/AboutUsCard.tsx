@@ -32,8 +32,8 @@ export default function AboutUsCard(props: Props) {
 				<Image
 					src={statics.image}
 					alt="about us"
-					width={500}
-					height={500}
+					width={1000}
+					height={1000}
 					className="mx-auto md:rounded-none lg:rounded-3xl"
 				/>
 			</div>
@@ -44,14 +44,14 @@ export default function AboutUsCard(props: Props) {
 export const AboutUsCard2 = () => {
 	return (
 		<WobbleCard
-			containerClassName="lg:max-w-6xl max-w-4xl bg-transparent bg-primary w-full rounded-none md:rounded-full shadow-none "
+			containerClassName="lg:max-w-6xl max-w-4xl bg-primary w-full rounded-none md:rounded-full shadow-none "
 			className="max-w-6xl md:bg-dot-primary rounded-none"
 		>
-			<div className="max-w-2xl text-center mx-auto ">
-				<h2 className=" text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-black  ">
+			<div className="max-w-2xl text-center mx-auto text-base-100">
+				<h2 className=" text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em]  ">
 					Why us?
 				</h2>
-				<p className="mt-4 text-base/6 text-neutral w-3/4 font-sentient">
+				<p className="mt-4 text-base/6  mx-auto font-sentient text-lg">
 					Here at BMOR immigration, we understand what a big decision coming to
 					Canada is. That’s why we will be there to support you every step of
 					the way. Our consultants give personalized advice to each customer,

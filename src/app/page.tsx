@@ -55,12 +55,6 @@ export default function Home() {
 					<Features />
 				</div>
 			</div>
-			{/* <div className=" z-10" id="AboutUs">
-				<AboutUs />
-			</div> */}
-			<div>
-				<FaqSection />
-			</div>
 		</main>
 	);
 }

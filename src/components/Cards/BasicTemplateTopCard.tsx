@@ -48,7 +48,9 @@ const BasicTemplateTopCard = ({
 		height: imageHeight,
 	};
 	return (
-		<div className={`w-full flex flex-col ${className} z-20 lg:px-10 md:px-5 `}>
+		<div
+			className={`w-full flex flex-col ${className} z-20 lg:px-10 md:px-5 my-10`}
+		>
 			<div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:gap-10 md:gap-5 w-full  text-primary-content  ">
 				<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 text-center md:text-left ">
 					<h1 className="lg:text-7xl text-4xl font-bold tracking-tight">
@@ -79,12 +81,12 @@ const BasicTemplateTopCard = ({
 					</div>
 					{/* button seciton end  */}
 				</div>
-				<div className="relative  md:max-h-96   w-full mx-auto  min-h-80">
+				<div className="relative  md:max-h-96   w-full mx-auto  min-h-80 overflow-hidden">
 					{/*@ts-ignore*/}
 					<Image
 						{...imageProps}
 						alt=""
-						className=" lg:max-w-[600px] mx-auto rounded-none"
+						className=" lg:max-w-[600px] xl:ml-auto xl:mx-0 mx-auto rounded-none"
 					/>
 				</div>
 			</div>
