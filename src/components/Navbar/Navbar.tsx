@@ -41,8 +41,8 @@ const Navbar = () => {
   > */}
       <div
         className={` relative ${show
-            ? "bg-primary mt-2 text-primary-content border-primary-content border-[1px] rounded-full "
-            : "bg-transparent mt-1 text-primary-content border-b-[1px] border-primary-content border-opacity-40 "
+          ? "bg-primary mt-2 text-primary-content border-primary-content border-[1px] rounded-full "
+          : "bg-transparent mt-1 text-primary-content border-b-[1px] border-primary-content border-opacity-40 "
           } items-center w-full flex justify-between transition-all duration-500 md:px-5 px-2 py-1`}
       >
         <div className="flex gap-2 items-center ml-2">
@@ -55,7 +55,7 @@ const Navbar = () => {
 								height={300}
 								className="h-full w-32 drop-shadow-lg text-primary-content stroke-primary-foreground"
 							/> */}
-              <div className="text-primary-content text-2xl font-extralight">
+              <div className="text-primary-content text-2xl font-extrabold">
                 BMOR
               </div>
             </div>
