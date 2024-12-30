@@ -88,6 +88,19 @@ const staticExpressStepProps: CarouselCardProps[] = [
 			</div>
 		),
 	},
+
+	{
+		title: "Step 4: Receive an invitation and apply",
+		subheading: "University of British Columbia",
+		overflowImageUrl: "/images/carouselCard/card2.png",
+		body: (
+			<div className="w-full flex flex-col gap-3">
+				Applications that have all the required documentation are often
+				processed in 6 months or less. If you have received an invitation, you
+				have 60 days to submit your application for permanent residence.
+			</div>
+		),
+	},
 	{
 		title: "check",
 		overflowImageUrl: "/images/carouselCard/card2.png",
@@ -99,18 +112,6 @@ const staticExpressStepProps: CarouselCardProps[] = [
 				Federal Skilled Workers Program). - Provincial Nomination - Written Job
 				offer from an employer in Canada - Certificate of qualification in a
 				trade occupation issued by a Canadian province or territory
-			</div>
-		),
-	},
-	{
-		title: "Step 4: Receive an invitation and apply",
-		subheading: "University of British Columbia",
-		overflowImageUrl: "/images/carouselCard/card2.png",
-		body: (
-			<div className="w-full flex flex-col gap-3">
-				Applications that have all the required documentation are often
-				processed in 6 months or less. If you have received an invitation, you
-				have 60 days to submit your application for permanent residence.
 			</div>
 		),
 	},

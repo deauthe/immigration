@@ -46,7 +46,7 @@ const Navbar = () => {
 						: "bg-transparent mt-1 text-primary-content border-b-[1px] border-primary-content border-opacity-40 "
 				} items-center w-full flex justify-between transition-all duration-500 md:px-5 px-2 py-1`}
 			>
-				<div className="flex gap-2 items-center ml-5">
+				<div className="flex gap-2 items-center ml-2">
 					<Link href="/">
 						<div className=" flex items-center w-fit h-full gap-2 ">
 							{/* <Image
@@ -56,8 +56,8 @@ const Navbar = () => {
 								height={300}
 								className="h-full w-32 drop-shadow-lg text-primary-content stroke-primary-foreground"
 							/> */}
-							<div className="text-primary-content text-2xl font-bold">
-								BMOR
+							<div className="text-primary-content text-2xl font-extralight">
+								BMOR Immigration And Visa Services
 							</div>
 						</div>
 					</Link>

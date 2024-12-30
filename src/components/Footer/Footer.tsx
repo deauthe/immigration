@@ -15,8 +15,12 @@ const Footer = () => {
 					</Link>
 				))}
 			</nav>
-			<Link href={"/"} className="text-3xl font-bold tracking-tighter">
-				BMOR
+			<Link
+				href={"/"}
+				className="text-3xl tracking-tighter flex flex-col gap-1"
+			>
+				<span className=" font-bold ">BMOR</span>
+				<span className="">Immigration And Visa Services</span>
 			</Link>
 			<nav>
 				<div className="grid grid-flow-col gap-4">
