@@ -11,6 +11,7 @@ import * as z from "zod";
 import LoginButton from "@/components/LoginButton";
 import { QuestionFormSchema } from "@/types/questionType";
 import { IconError404 } from "@tabler/icons-react";
+import { send } from "process";
 type Question = z.infer<typeof QuestionFormSchema>;
 
 const QuestionFormContent = () => {
@@ -30,6 +31,7 @@ const QuestionFormContent = () => {
   const router = useRouter();
   const { toast } = useToast();
   const session = useSession();
+  const [status, setStatus] = useState<string | null>(null);
 
   useEffect(() => {
     const email = session.data?.user?.email;
@@ -43,17 +45,16 @@ const QuestionFormContent = () => {
     console.log("errors hai:", errors);
   }, [errors]);
 
-  const sendMailHandler = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const sendMailHandler: SubmitHandler<Question> = async (data: Question) => {
+    setIsloading(true);
 
     try {
-      const response = await fetch('/api/send-question', {
+      const response = await fetch('/api/email-question', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: data.email, question: data.question, name: data.name, phone: data.phone }),
       });
 
       if (response.ok) {
@@ -118,7 +119,11 @@ const QuestionFormContent = () => {
 
   return (
     <form
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={() => {
+        handleSubmit(onSubmit)
+        handleSubmit(sendMailHandler)
+      }
+      }
       className="du-form-control   p-4 rounded-3xl bg-transparent mx-auto w-full items-center flex flex-col gap-3 text-black"
     >
       <div className="mx-auto w-full ">
@@ -209,10 +214,10 @@ const QuestionFormContent = () => {
         )}
       </div>
 
-      <button className="du-btn du-btn-primary my-2 " type="submit">
+      <button className="du-btn du-btn-primary my-2" type="submit">
         Submit
       </button>
-      <button className="du-btn du-btn-primary my-2 " type="submit">
+      <button className="du-btn du-btn-primary my-2" type="submit" >
         Send Mail
       </button>
 
