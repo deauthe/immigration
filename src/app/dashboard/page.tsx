@@ -1,7 +1,9 @@
 "use server ";
 import { redirect } from "next/navigation";
 function DashboardPage() {
-	redirect("/dashboard/users");
+  const dashBoardAuth = false;
+  if (!dashBoardAuth) {
+    redirect("/dashboard/login");
+  }
 }
-
 export default DashboardPage;

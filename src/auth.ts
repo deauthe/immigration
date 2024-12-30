@@ -4,15 +4,14 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import prisma from "./lib/prisma";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-	...authConfig,
-	callbacks: {
-		async jwt({ token }) {
-			console.log(token);
-			return token;
-		},
-	},
-	adapter: PrismaAdapter(prisma),
-	session: { strategy: "jwt" },
+  ...authConfig,
+  callbacks: {
+    async jwt({ token }) {
+      return token;
+    },
+  },
+  adapter: PrismaAdapter(prisma),
+  session: { strategy: "jwt" },
 });
 
 //made a different authConfig file as prisma doesn't work with edge and we need to use this file with
