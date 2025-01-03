@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
 			secure: true,
 			auth: {
 				user: process.env.NEXT_PUBLIC_SENDER_EMAIL, // Your email address
-				pass: process.env.NEXT_PUBLIC_SENDER_EMAIL_PASSWORD, // Your email password or app-specific password
+				pass: process.env.SENDER_EMAIL_PASSWORD, // Your email password or app-specific password
 			},
 		});
 
@@ -28,8 +28,8 @@ export async function POST(req: NextRequest) {
 		const mailOptions = {
 			from: process.env.NEXT_PUBLIC_SENDER_EMAIL,
 			to: process.env.NEXT_PUBLIC_RECEIVER_EMAIL, // The email where you want to receive questions
-			subject: `New Question from ${name} : ${email}`,
-			text: `You received a new question: \n\n${question} \n\n phone number : ${phone}`,
+			subject: `New Question from : ${email}`,
+			text: `You received a new question from ${name} - ${email}: \n\n${question} \n\n phone number : ${phone}`,
 		};
 
 		// Send the email
