@@ -49,7 +49,7 @@ const BasicTemplateTopCard = ({
 	};
 	return (
 		<div
-			className={`w-full flex flex-col ${className} z-20 lg:px-10 md:px-5 my-10`}
+			className={`w-full flex flex-col ${className} z-20 lg:px-10 md:px-5 mt-10`}
 		>
 			<div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:gap-10 md:gap-5 w-full  text-primary-content  ">
 				<div className="flex flex-col gap-3 md:gap-5 lg:gap-7 text-center md:text-left ">
